@@ -9,12 +9,14 @@ import { AppRoutingModule } from './app-routing.module'; // CLI imports AppRouti
 // Prime-ng
 import { InputTextModule } from 'primeng/inputtext';
 import { LandingComponent } from './components/landing/landing.component';
+import { MainComponent } from './components/main/main.component';
 
 
 @NgModule({
 	declarations: [
 		AppComponent,
-		LandingComponent
+		LandingComponent,
+		MainComponent
 	],
 	imports: [
 		BrowserModule,
