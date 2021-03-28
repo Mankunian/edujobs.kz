@@ -1,0 +1,19 @@
+.blog-post{
+	background: aliceblue;
+  padding: 10px;
+  border: 1px solid transparent;
+	border-radius: 2px;
+	border: 1px solid #E9ECEF;
+	button{
+		margin-left: 0.25rem;
+		margin-right: 0.25rem;
+	}
+}
+
+.p-accordion p-accordiontab .p-accordion-tab{
+	margin-bottom: 10px;
+}
+
+.p-accordion p-accordiontab:last-child .p-accordion-header:not(.p-highlight) .p-accordion-header-link:hover{
+	text-decoration: none;
+}
