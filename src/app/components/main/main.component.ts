@@ -18,12 +18,12 @@ export class MainComponent implements OnInit, OnDestroy {
 	subscription: Subscription;
 	msgs1: ({ severity: string; summary: string; detail: string; icon?: undefined; } | { severity: string; summary: string; detail: string; icon: string; })[];
 	hideMessage: boolean;
+	badgeColor: string;
 
 
 	constructor(private shareData: ShareDataService) { }
 
 	ngOnInit(): void {
-		// this.getMessage();
 		this.getParams();
 		this.getAccordionList();
 		this.getJobList();
@@ -84,8 +84,6 @@ export class MainComponent implements OnInit, OnDestroy {
 				description: 'Barnsley College is an exciting place to be. In recent times weve enjoyed considerable success and oreputation for quality and innovation is well known.',
 				status: [
 					{ id: 1, name: 'Job of the week' },
-					{ id: 2, name: 'Ending soon' },
-					{ id: 3, name: 'Fast apply' }
 				]
 			},
 			{
@@ -97,7 +95,7 @@ export class MainComponent implements OnInit, OnDestroy {
 				school: 'Barnsley college',
 				contact_term: 'Permanent',
 				description: 'Barnsley College is an exciting place to be. In recent times weve enjoyed considerable success and oreputation for quality and innovation is well known.',
-				status: []
+				status: [{ id: 2, name: 'Ending soon' },]
 			},
 			{
 				id: 3,
@@ -108,15 +106,23 @@ export class MainComponent implements OnInit, OnDestroy {
 				school: 'Barnsley college',
 				contact_term: 'Permanent',
 				description: 'Barnsley College is an exciting place to be. In recent times weve enjoyed considerable success and oreputation for quality and innovation is well known.',
-				status: []
+				status: [{ id: 3, name: 'Fast apply' }]
 			},
 		]
+		this.jobList.forEach(jobs => {
+			let status = jobs.status;
+			status.forEach(stat => {
+				console.log(stat)
+				if (stat.id === 1) {
+					this.badgeColor = 'warning';
+				} else if (stat.id === 2) {
+					this.badgeColor = 'danger';
+				} else {
+					this.badgeColor = 'success';
+				}
+			});
+		});
 	}
 
-	getMessage() {
-		this.msgs1 = [
-			{ severity: 'custom', summary: 'Custom', detail: '', icon: 'pi-file' }
-		];
-	}
 
 }

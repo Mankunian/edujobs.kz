@@ -16,13 +16,16 @@ import { ButtonModule } from 'primeng/button';
 import { AccordionModule } from 'primeng/accordion';
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
+import { BadgeModule } from 'primeng/badge';
+import { LoginRegisterComponent } from './components/login-register/login-register.component';
 
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		LandingComponent,
-		MainComponent
+		MainComponent,
+		LoginRegisterComponent
 	],
 	imports: [
 		BrowserModule,
@@ -37,7 +40,8 @@ import { MessageModule } from 'primeng/message';
 		ButtonModule,
 		AccordionModule,
 		MessagesModule,
-		MessageModule
+		MessageModule,
+		BadgeModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]
