@@ -3,7 +3,10 @@
 
 		<div class="col-md-4 text-center">
 			<div class="mb-3 rounded">
-				<!-- <p-menu [model]="items"></p-menu> -->
+				<h5 class="text-left">Your filters</h5>
+				<div class="my-filter mb-4">
+					<p-messages [(value)]="msgs1" [enableService]="false"></p-messages>
+				</div>
 				<h5 class="text-left">Refine search</h5>
 				<p-accordion *ngFor="let item of accordionList" class="mt-2">
 					<p-accordionTab header="{{item.name}}">

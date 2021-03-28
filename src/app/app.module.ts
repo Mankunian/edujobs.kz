@@ -14,7 +14,8 @@ import { MenuModule } from 'primeng/menu';
 import { DividerModule } from 'primeng/divider';
 import { ButtonModule } from 'primeng/button';
 import { AccordionModule } from 'primeng/accordion';
-
+import { MessagesModule } from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
 
 
 @NgModule({
@@ -34,7 +35,9 @@ import { AccordionModule } from 'primeng/accordion';
 		MenuModule,
 		DividerModule,
 		ButtonModule,
-		AccordionModule
+		AccordionModule,
+		MessagesModule,
+		MessageModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

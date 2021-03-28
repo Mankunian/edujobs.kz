@@ -14,13 +14,16 @@ import { Subscription } from 'rxjs';
 export class MainComponent implements OnInit, OnDestroy {
 	accordionList: any;
 	jobList: any[];
-	message: string;
+	message: any;
 	subscription: Subscription;
+	msgs1: ({ severity: string; summary: string; detail: string; icon?: undefined; } | { severity: string; summary: string; detail: string; icon: string; })[];
+	hideMessage: boolean;
 
 
 	constructor(private shareData: ShareDataService) { }
 
 	ngOnInit(): void {
+		// this.getMessage();
 		this.getParams();
 		this.getAccordionList();
 		this.getJobList();
@@ -31,8 +34,28 @@ export class MainComponent implements OnInit, OnDestroy {
 	}
 
 	getParams() {
-		this.subscription = this.shareData.currentMessage.subscribe(message1 => {
-			this.message = message1;
+		this.subscription = this.shareData.currentMessage.subscribe((response: any) => {
+			if (response !== 0) {
+				this.message = JSON.parse(response);
+				let obj_keys = Object.keys(this.message);
+				if (obj_keys.length === 2) {
+					this.msgs1 = [
+						{ severity: 'custom', summary: this.message.job_title, detail: '', icon: 'pi-file' },
+						{ severity: 'custom', summary: this.message.region, detail: '', icon: 'pi-file' }
+					];
+				} else {
+					if (obj_keys[0] === 'job_title') {
+						this.msgs1 = [
+							{ severity: 'custom', summary: this.message.job_title, detail: '', icon: 'pi-file' }
+						];
+					} else {
+						this.msgs1 = [
+							{ severity: 'custom', summary: this.message.region, detail: '', icon: 'pi-file' }
+						];
+					}
+
+				}
+			}
 		})
 	}
 
@@ -88,6 +111,12 @@ export class MainComponent implements OnInit, OnDestroy {
 				status: []
 			},
 		]
+	}
+
+	getMessage() {
+		this.msgs1 = [
+			{ severity: 'custom', summary: 'Custom', detail: '', icon: 'pi-file' }
+		];
 	}
 
 }

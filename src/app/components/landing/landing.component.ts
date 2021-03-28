@@ -16,11 +16,8 @@ export class LandingComponent implements OnInit {
 	}
 
 	searchJobs() {
-		console.log(this.region)
-		console.log(this.job_title)
-		let search_params = { 'region': this.region, 'job_title': this.job_title }
+		let search_params = { 'region': this.region, 'job_title': this.job_title };
 		this.shareData.changeMessage(JSON.stringify(search_params))
 		this.router.navigate(['/main'])
 	}
-
 }
