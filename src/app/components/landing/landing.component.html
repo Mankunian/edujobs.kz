@@ -111,10 +111,10 @@
 <section id="about" class="about">
 	<div class="container" data-aos="fade-up">
 
-		<ngb-carousel *ngIf="images">
+		<ngb-carousel *ngIf="images" showNavigationArrows="true" interval="2000" pauseOnHover="false">
 			<ng-template ngbSlide *ngFor="let item of images; let i = index;">
 				<div class="picsum-img-wrapper">
-					<img width="100%" [src]="images[i]" alt="Random first slide">
+					<img width="100%" style="height: 400px;" [src]="images[i]" alt="Random first slide">
 				</div>
 				<div class="carousel-caption">
 					<h3>First slide label</h3>
@@ -122,9 +122,46 @@
 				</div>
 			</ng-template>
 		</ngb-carousel>
-
 	</div>
 </section>
+
+<!-- ======= Team Section ======= -->
+<section id="team" class="team section-bg">
+	<div class="container" data-aos="fade-up">
+
+		<div class="section-title">
+			<h2>FEATURED SCHOOLS</h2>
+			<p>YOUR NEXT ROLE COULD BE WITH ONE OF THESE LEADING SCHOOLS. APPLY TODAY.</p>
+		</div>
+
+		<div class="row">
+			<div *ngFor="let item of featuredSchools" class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+				data-aos-delay="100">
+				<div class="member">
+					<div class="member-img">
+						<img width="100" [src]="item.img" class="img-fluid" alt="">
+						<div class="social">
+							<a href=""><i class="icofont-twitter"></i></a>
+							<a href=""><i class="icofont-facebook"></i></a>
+							<a href=""><i class="icofont-instagram"></i></a>
+							<a href=""><i class="icofont-linkedin"></i></a>
+						</div>
+					</div>
+					<div class="member-info">
+						<h4>{{item.title}}</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section><!-- End Team Section -->
+
+
+
+
+
+
+
 
 <main style="display: none;" id="main">
 	<section id="about" class="about">
@@ -351,7 +388,93 @@
 		</div>
 	</section><!-- End Testimonials Section -->
 
+	<!-- ======= Team Section ======= -->
+	<section id="team" class="team section-bg">
+		<div class="container" data-aos="fade-up">
 
+			<div class="section-title">
+				<h2>FEATURED SCHOOLS</h2>
+				<p>YOUR NEXT ROLE COULD BE WITH ONE OF THESE LEADING SCHOOLS. APPLY TODAY.</p>
+			</div>
+
+			<div class="row">
+
+				<div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+					<div class="member">
+						<div class="member-img">
+							<img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+							<div class="social">
+								<a href=""><i class="icofont-twitter"></i></a>
+								<a href=""><i class="icofont-facebook"></i></a>
+								<a href=""><i class="icofont-instagram"></i></a>
+								<a href=""><i class="icofont-linkedin"></i></a>
+							</div>
+						</div>
+						<div class="member-info">
+							<h4>Walter White</h4>
+							<span>Chief Executive Officer</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+					<div class="member">
+						<div class="member-img">
+							<img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+							<div class="social">
+								<a href=""><i class="icofont-twitter"></i></a>
+								<a href=""><i class="icofont-facebook"></i></a>
+								<a href=""><i class="icofont-instagram"></i></a>
+								<a href=""><i class="icofont-linkedin"></i></a>
+							</div>
+						</div>
+						<div class="member-info">
+							<h4>Sarah Jhonson</h4>
+							<span>Product Manager</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+					<div class="member">
+						<div class="member-img">
+							<img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+							<div class="social">
+								<a href=""><i class="icofont-twitter"></i></a>
+								<a href=""><i class="icofont-facebook"></i></a>
+								<a href=""><i class="icofont-instagram"></i></a>
+								<a href=""><i class="icofont-linkedin"></i></a>
+							</div>
+						</div>
+						<div class="member-info">
+							<h4>William Anderson</h4>
+							<span>CTO</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+					<div class="member">
+						<div class="member-img">
+							<img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
+							<div class="social">
+								<a href=""><i class="icofont-twitter"></i></a>
+								<a href=""><i class="icofont-facebook"></i></a>
+								<a href=""><i class="icofont-instagram"></i></a>
+								<a href=""><i class="icofont-linkedin"></i></a>
+							</div>
+						</div>
+						<div class="member-info">
+							<h4>Amanda Jepson</h4>
+							<span>Accountant</span>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</section><!-- End Team Section -->
 
 	<!-- ======= Cta Section ======= -->
 	<section id="cta" class="cta">
@@ -530,95 +653,7 @@
 		</div>
 	</section><!-- End Portfolio Section -->
 
-	<!-- ======= Team Section ======= -->
-	<section id="team" class="team section-bg">
-		<div class="container" data-aos="fade-up">
 
-			<div class="section-title">
-				<h2>Team</h2>
-				<p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-					consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
-					in iste officiis commodi quidem hic quas.</p>
-			</div>
-
-			<div class="row">
-
-				<div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-					<div class="member">
-						<div class="member-img">
-							<img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-							<div class="social">
-								<a href=""><i class="icofont-twitter"></i></a>
-								<a href=""><i class="icofont-facebook"></i></a>
-								<a href=""><i class="icofont-instagram"></i></a>
-								<a href=""><i class="icofont-linkedin"></i></a>
-							</div>
-						</div>
-						<div class="member-info">
-							<h4>Walter White</h4>
-							<span>Chief Executive Officer</span>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-					<div class="member">
-						<div class="member-img">
-							<img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-							<div class="social">
-								<a href=""><i class="icofont-twitter"></i></a>
-								<a href=""><i class="icofont-facebook"></i></a>
-								<a href=""><i class="icofont-instagram"></i></a>
-								<a href=""><i class="icofont-linkedin"></i></a>
-							</div>
-						</div>
-						<div class="member-info">
-							<h4>Sarah Jhonson</h4>
-							<span>Product Manager</span>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-					<div class="member">
-						<div class="member-img">
-							<img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-							<div class="social">
-								<a href=""><i class="icofont-twitter"></i></a>
-								<a href=""><i class="icofont-facebook"></i></a>
-								<a href=""><i class="icofont-instagram"></i></a>
-								<a href=""><i class="icofont-linkedin"></i></a>
-							</div>
-						</div>
-						<div class="member-info">
-							<h4>William Anderson</h4>
-							<span>CTO</span>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
-					<div class="member">
-						<div class="member-img">
-							<img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
-							<div class="social">
-								<a href=""><i class="icofont-twitter"></i></a>
-								<a href=""><i class="icofont-facebook"></i></a>
-								<a href=""><i class="icofont-instagram"></i></a>
-								<a href=""><i class="icofont-linkedin"></i></a>
-							</div>
-						</div>
-						<div class="member-info">
-							<h4>Amanda Jepson</h4>
-							<span>Accountant</span>
-						</div>
-					</div>
-				</div>
-
-			</div>
-
-		</div>
-	</section><!-- End Team Section -->
 
 	<!-- ======= Pricing Section ======= -->
 	<section id="pricing" class="pricing">
