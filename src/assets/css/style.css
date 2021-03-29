@@ -907,7 +907,8 @@ section {
 --------------------------------------------------------------*/
 .services .icon-box {
   text-align: center;
-  padding: 70px 20px 80px 20px;
+  /* padding: 70px 20px 80px 20px; */
+  padding: 30px 20px;
   transition: all ease-in-out 0.3s;
   background: #fff;
   box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.05);
@@ -1041,7 +1042,8 @@ section {
 .cta {
   background: #2487ce;
   background-size: cover;
-  padding: 60px 0;
+  /* padding: 60px 0; */
+  padding: 30px 0;
 }
 
 .cta h3 {
