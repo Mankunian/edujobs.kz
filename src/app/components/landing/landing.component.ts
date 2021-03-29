@@ -16,6 +16,7 @@ export class LandingComponent implements OnInit {
 	sponsoredJobs: any;
 	images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
 	featuredSchools: { id: number; title: string; img: string; }[];
+	carrerAdvice: { id: number; title: string; description: string; img: string; }[];
 
 
 	constructor(private router: Router, private shareData: ShareDataService, config: NgbCarouselConfig) {
@@ -29,6 +30,7 @@ export class LandingComponent implements OnInit {
 	ngOnInit(): void {
 		this.getSponsoredJobs();
 		this.getFeaturedJobs();
+		this.getCarrerAdvice();
 	}
 
 	searchJobs() {
@@ -51,6 +53,14 @@ export class LandingComponent implements OnInit {
 			{ id: 2, title: 'The Hyde School', img: 'assets/img/custom/2.png' },
 			{ id: 3, title: 'Xavier Catholic Education Trust', img: 'assets/img/custom/3.jpg' },
 			{ id: 4, title: 'Eton Dorney Independent School', img: 'assets/img/custom/4.jpg' }
+		]
+	}
+
+	getCarrerAdvice() {
+		this.carrerAdvice = [
+			{ id: 1, title: 'Lorem Ipsum', description: 'Lorem ipsum', img: 'assets/img/custom/5.jpg' },
+			{ id: 2, title: 'Lorem Ipsum', description: 'Lorem ipsum', img: 'assets/img/custom/5.jpg' },
+			{ id: 3, title: 'Lorem Ipsum', description: 'Lorem ipsum', img: 'assets/img/custom/5.jpg' },
 		]
 	}
 }
