@@ -108,7 +108,25 @@
 	</div>
 </section><!-- End Sevices Section -->
 
-<main style="display: block;" id="main">
+<section id="about" class="about">
+	<div class="container" data-aos="fade-up">
+
+		<ngb-carousel *ngIf="images">
+			<ng-template ngbSlide *ngFor="let item of images; let i = index;">
+				<div class="picsum-img-wrapper">
+					<img width="100%" [src]="images[i]" alt="Random first slide">
+				</div>
+				<div class="carousel-caption">
+					<h3>First slide label</h3>
+					<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+				</div>
+			</ng-template>
+		</ngb-carousel>
+
+	</div>
+</section>
+
+<main style="display: none;" id="main">
 	<section id="about" class="about">
 		<div class="container" data-aos="fade-up">
 

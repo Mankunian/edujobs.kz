@@ -4,7 +4,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarousel, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { AppRoutingModule } from './app-routing.module';
 // Prime-ng
 import { InputTextModule } from 'primeng/inputtext';
@@ -41,7 +42,7 @@ import { LoginRegisterComponent } from './components/login-register/login-regist
 		AccordionModule,
 		MessagesModule,
 		MessageModule,
-		BadgeModule
+		BadgeModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent]

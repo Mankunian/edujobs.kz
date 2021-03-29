@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ShareDataService } from "../../services/share-data.service";
-
 @Component({
 	selector: 'app-landing',
 	templateUrl: './landing.component.html',
@@ -11,6 +10,7 @@ export class LandingComponent implements OnInit {
 	region: any;
 	job_title: any;
 	sponsoredJobs: any;
+	images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
 	constructor(private router: Router, private shareData: ShareDataService) { }
 
 	ngOnInit(): void {
