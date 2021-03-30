@@ -1,4 +1,21 @@
-<section id="about" class="about">
+<div class="container">
+	<p-galleria [showItemNavigators]="true" [autoPlay]="true" [transitionInterval]="4000" [(value)]="images"
+		[responsiveOptions]="responsiveOptions" [numVisible]="5">
+		<ng-template pTemplate="item" let-item>
+			<img [src]="item.previewImageSrc" style="width: 100%; max-height: max-content; display: block;" />
+		</ng-template>
+		<ng-template style="display: block;" pTemplate="thumbnail" let-item>
+			<div class="p-grid p-nogutter p-justify-center">
+				<img width="100px" [src]="item.thumbnailImageSrc" style="display: block;" />
+			</div>
+		</ng-template>
+		<ng-template pTemplate="caption" let-item>
+			<h4 style="margin-bottom: .5rem; color: #ffffff;">{{item.title}}</h4>
+			<p>{{item.alt}}</p>
+		</ng-template>
+	</p-galleria>
+</div>
+<!-- <section id="about" class="about">
 	<div class="container" data-aos="fade-up">
 
 		<ngb-carousel *ngIf="images" showNavigationArrows="true" interval="2000" pauseOnHover="false">
@@ -13,4 +30,4 @@
 			</ng-template>
 		</ngb-carousel>
 	</div>
-</section>
+</section> -->
