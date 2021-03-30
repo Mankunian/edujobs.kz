@@ -33,6 +33,7 @@ import { PostVacancyComponent } from './components/landing/post-vacancy/post-vac
 import { CarouselModule } from 'primeng/carousel';
 import { RecommendedJobsComponent } from './components/landing/banner/recommended-jobs/recommended-jobs.component';
 import { JobService } from './components/landing/banner/recommended-jobs/jobs.service';
+import { TagModule } from 'primeng/tag';
 
 
 @NgModule({
@@ -68,7 +69,8 @@ import { JobService } from './components/landing/banner/recommended-jobs/jobs.se
 		BadgeModule,
 		CardModule,
 		CarouselModule,
-		HttpClientModule
+		HttpClientModule,
+		TagModule
 	],
 	providers: [JobService],
 	bootstrap: [AppComponent]
