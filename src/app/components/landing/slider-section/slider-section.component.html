@@ -1,0 +1,16 @@
+<section id="about" class="about">
+	<div class="container" data-aos="fade-up">
+
+		<ngb-carousel *ngIf="images" showNavigationArrows="true" interval="2000" pauseOnHover="false">
+			<ng-template ngbSlide *ngFor="let item of images; let i = index;">
+				<div class="picsum-img-wrapper">
+					<img width="100%" style="height: 400px;" [src]="images[i]" alt="Random first slide">
+				</div>
+				<div class="carousel-caption">
+					<h3>First slide label</h3>
+					<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+				</div>
+			</ng-template>
+		</ngb-carousel>
+	</div>
+</section>

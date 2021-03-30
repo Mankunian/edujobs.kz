@@ -1,0 +1,30 @@
+<!-- ======= FEATURED SCHOOLS Section ======= -->
+<section id="team" class="team section-bg">
+	<div class="container" data-aos="fade-up">
+
+		<div class="section-title">
+			<h2>FEATURED SCHOOLS</h2>
+			<p>YOUR NEXT ROLE COULD BE WITH ONE OF THESE LEADING SCHOOLS. APPLY TODAY.</p>
+		</div>
+
+		<div class="row">
+			<div *ngFor="let item of featuredSchools" class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+				data-aos-delay="100">
+				<div class="member featured_school">
+					<div class="member-img">
+						<img width="100" [src]="item.img" class="img-fluid" alt="">
+						<div class="social">
+							<a href=""><i class="icofont-twitter"></i></a>
+							<a href=""><i class="icofont-facebook"></i></a>
+							<a href=""><i class="icofont-instagram"></i></a>
+							<a href=""><i class="icofont-linkedin"></i></a>
+						</div>
+					</div>
+					<div class="member-info">
+						<h4>{{item.title}}</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section><!-- End FEATURED SCHOOLS Section -->

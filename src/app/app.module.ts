@@ -20,6 +20,16 @@ import { MessageModule } from 'primeng/message';
 import { BadgeModule } from 'primeng/badge';
 import { LoginRegisterComponent } from './components/login-register/login-register.component';
 import { CardModule } from 'primeng/card';
+import { BannerComponent } from './components/landing/banner/banner.component';
+import { SponsoredJobsComponent } from './components/landing/sponsored-jobs/sponsored-jobs.component';
+import { FeaturedJobsComponent } from './components/landing/featured-jobs/featured-jobs.component';
+import { CareerAdviceComponent } from './components/landing/career-advice/career-advice.component';
+import { LocationGuidesComponent } from './components/landing/location-guides/location-guides.component';
+import { SliderSectionComponent } from './components/landing/slider-section/slider-section.component';
+import { ServiceSectionComponent } from './components/landing/service-section/service-section.component';
+import { PostVacancyComponent } from './components/landing/post-vacancy/post-vacancy.component';
+import { CarouselModule } from 'primeng/carousel';
+import { RecommendedJobsComponent } from './components/landing/banner/recommended-jobs/recommended-jobs.component';
 
 
 @NgModule({
@@ -27,7 +37,16 @@ import { CardModule } from 'primeng/card';
 		AppComponent,
 		LandingComponent,
 		MainComponent,
-		LoginRegisterComponent
+		LoginRegisterComponent,
+		BannerComponent,
+		SponsoredJobsComponent,
+		FeaturedJobsComponent,
+		CareerAdviceComponent,
+		LocationGuidesComponent,
+		SliderSectionComponent,
+		ServiceSectionComponent,
+		PostVacancyComponent,
+		RecommendedJobsComponent
 	],
 	imports: [
 		BrowserModule,
@@ -44,7 +63,8 @@ import { CardModule } from 'primeng/card';
 		MessagesModule,
 		MessageModule,
 		BadgeModule,
-		CardModule
+		CardModule,
+		CarouselModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]
