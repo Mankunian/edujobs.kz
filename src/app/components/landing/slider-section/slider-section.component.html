@@ -1,6 +1,6 @@
 <div class="container">
-	<p-galleria [showItemNavigators]="true" [autoPlay]="true" [transitionInterval]="4000" [(value)]="images"
-		[responsiveOptions]="responsiveOptions" [numVisible]="5">
+	<p-galleria [circular]="true" [showItemNavigators]="true" [autoPlay]="true" [transitionInterval]="4000"
+		[(value)]="images" [responsiveOptions]="responsiveOptions" [numVisible]="5">
 		<ng-template pTemplate="item" let-item>
 			<img [src]="item.previewImageSrc" style="width: 100%; max-height: max-content; display: block;" />
 		</ng-template>
