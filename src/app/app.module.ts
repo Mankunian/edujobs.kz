@@ -35,6 +35,7 @@ import { RecommendedJobsComponent } from './components/landing/banner/recommende
 import { JobService } from './components/landing/banner/recommended-jobs/jobs.service';
 import { TagModule } from 'primeng/tag';
 import { GalleriaModule } from 'primeng/galleria';
+import { RecruitComponent } from './components/recruit/recruit.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { GalleriaModule } from 'primeng/galleria';
 		SliderSectionComponent,
 		ServiceSectionComponent,
 		PostVacancyComponent,
-		RecommendedJobsComponent
+		RecommendedJobsComponent,
+		RecruitComponent
 	],
 	imports: [
 		BrowserModule,

@@ -47,23 +47,25 @@
 					</ul>
 				</li>
 			</ul>
-			<form class="nav-btn-group">
+			<form class="nav-btn-group" *ngIf="hasRoute('/') && !hasRoute('recruit')">
 				<button routerLink="/login" pButton pRipple type="button" label="Sign in"
 					class="p-button-raised p-button-danger p-button-sm"></button>
 				<button pButton pRipple type="button" label="Register CV"
 					class="p-button-raised p-button-warning p-button-sm"></button>
-				<button pButton pRipple type="button" label="Recruiting? Post a vacancy"
+				<button routerLink="/recruit" pButton pRipple type="button" label="Recruiting? Post a vacancy"
 					class="p-button-raised p-button-help p-button-sm"></button>
+			</form>
+			<form class="nav-btn-group" *ngIf="hasRoute('recruit')">
+				<button pButton pRipple type="button" label="Sign in/Register"
+					class="p-button-raised p-button-warning p-button-sm"></button>
+				<button routerLink="/recruit" pButton pRipple type="button" label="Jobseekers"
+					class="p-button-raised p-button-info p-button-sm"></button>
 			</form>
 		</div>
 	</div>
 </nav>
 
-<div style="padding-top: 80px;">
-	<router-outlet></router-outlet>
-</div>
-
-
+<router-outlet></router-outlet>
 
 
 <!-- ======= Footer ======= -->
@@ -135,7 +137,7 @@
 			<a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
 		</div>
 	</div>
-</footer><!-- End Footer -->
+</footer>
 
 <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
 <div id="preloader"></div>
