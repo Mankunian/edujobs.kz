@@ -17,6 +17,8 @@ export class LandingComponent implements OnInit {
 	images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
 	featuredSchools: { id: number; title: string; img: string; }[];
 	carrerAdvice: { id: number; title: string; description: string; img: string; }[];
+	howCanWeHelp: any[];
+	locations: { id: number; name: string; img: string; }[];
 
 
 	constructor(private router: Router, private shareData: ShareDataService, config: NgbCarouselConfig) {
@@ -31,6 +33,8 @@ export class LandingComponent implements OnInit {
 		this.getSponsoredJobs();
 		this.getFeaturedJobs();
 		this.getCarrerAdvice();
+		this.getHowCanWeHelp();
+		this.getLocations();
 	}
 
 	searchJobs() {
@@ -61,6 +65,21 @@ export class LandingComponent implements OnInit {
 			{ id: 1, title: 'Lorem Ipsum', description: 'Lorem ipsum', img: 'assets/img/custom/5.jpg' },
 			{ id: 2, title: 'Lorem Ipsum', description: 'Lorem ipsum', img: 'assets/img/custom/5.jpg' },
 			{ id: 3, title: 'Lorem Ipsum', description: 'Lorem ipsum', img: 'assets/img/custom/5.jpg' },
+		]
+	}
+
+	getHowCanWeHelp() {
+		this.howCanWeHelp = [
+			{ id: 1, title: 'Carrer Advice Hub', description: 'From schemes of work to school and staffing' },
+			{ id: 2, title: 'Teaching in the UK', description: 'From schemes of work to school and staffing' }
+		]
+	}
+
+	getLocations() {
+		this.locations = [
+			{ id: 1, name: 'Tokyo', img: 'assets/img/custom/5.jpg' },
+			{ id: 2, name: 'London', img: 'assets/img/custom/5.jpg' },
+			{ id: 3, name: 'Warsaw', img: 'assets/img/custom/5.jpg' },
 		]
 	}
 }

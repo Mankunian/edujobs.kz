@@ -19,6 +19,7 @@ import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
 import { BadgeModule } from 'primeng/badge';
 import { LoginRegisterComponent } from './components/login-register/login-register.component';
+import { CardModule } from 'primeng/card';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { LoginRegisterComponent } from './components/login-register/login-regist
 		MessagesModule,
 		MessageModule,
 		BadgeModule,
+		CardModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

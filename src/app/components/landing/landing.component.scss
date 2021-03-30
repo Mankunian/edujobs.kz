@@ -14,3 +14,35 @@
 .carousel-item{
 	transition: none
 }
+
+.title_recom{
+	text-transform: uppercase;
+}
+
+.location{ 
+	img{
+		filter: brightness(50%);
+	}
+}
+
+.location:hover{
+	filter: brightness(90%);
+}
+
+.card-img-overlay{
+	display: flex;
+	justify-content: center;
+  align-items: center;
+  .card-title{
+		color: #fff;
+    font-size: xx-large;
+	}
+}
+
+.team .location {
+	min-height: max-content;
+	margin: 10px auto;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0px 2px 15px rgba(18, 66, 101, 0.08);
+}
