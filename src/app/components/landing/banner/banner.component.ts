@@ -10,8 +10,6 @@ import { ShareDataService } from 'src/app/services/share-data.service';
 export class BannerComponent implements OnInit {
 	region: any;
 	job_title: any;
-	products: any;
-	responsiveOptions;
 
 	constructor(private shareData: ShareDataService, private router: Router,) { }
 

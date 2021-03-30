@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppComponent } from './app.component';
 import { NgbCarousel, NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -30,6 +32,7 @@ import { ServiceSectionComponent } from './components/landing/service-section/se
 import { PostVacancyComponent } from './components/landing/post-vacancy/post-vacancy.component';
 import { CarouselModule } from 'primeng/carousel';
 import { RecommendedJobsComponent } from './components/landing/banner/recommended-jobs/recommended-jobs.component';
+import { JobService } from './components/landing/banner/recommended-jobs/jobs.service';
 
 
 @NgModule({
@@ -64,9 +67,10 @@ import { RecommendedJobsComponent } from './components/landing/banner/recommende
 		MessageModule,
 		BadgeModule,
 		CardModule,
-		CarouselModule
+		CarouselModule,
+		HttpClientModule
 	],
-	providers: [],
+	providers: [JobService],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }
