@@ -8,9 +8,19 @@
 	<h5 class="text-left">Refine search</h5>
 	<p-accordion *ngFor="let item of accordionList" class="mt-2">
 		<p-accordionTab header="{{item.name}}">
-			<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim ea minima doloribus incidunt illum sed molestias
-				ullam odio iusto, aspernatur voluptates quod, corrupti asperiores saepe commodi delectus sapiente! Est, iusto.
-			</p>
+			<p-dropdown *ngIf="item.name === 'Location'" ngDefaultControl [options]="countries" [(ngModel)]="selectedCountry"
+				optionLabel="name" [filter]="true" filterBy="name" [showClear]="true" placeholder="Select a Country">
+				<ng-template pTemplate="selectedItem">
+					<div class="country-item country-item-value" *ngIf="selectedCountry">
+						<div>{{selectedCountry.name}}</div>
+					</div>
+				</ng-template>
+				<ng-template let-country pTemplate="item">
+					<div class="country-item text-left">
+						<div>{{country.name}}</div>
+					</div>
+				</ng-template>
+			</p-dropdown>
 		</p-accordionTab>
 	</p-accordion>
 </div>

@@ -9,7 +9,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 export class FilterComponent implements OnInit {
 	accordionList: any;
 	filterParams: any;
-	selectedCountry: string;
+	selectedCountry: any;
 	countries: any[];
 
 	constructor() {
