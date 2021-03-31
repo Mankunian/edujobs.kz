@@ -1,5 +1,10 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
+interface CareerGroup {
+	name: string,
+	code: string
+}
+
 @Component({
 	selector: 'app-filter',
 	templateUrl: './filter.component.html',
@@ -11,6 +16,8 @@ export class FilterComponent implements OnInit {
 	filterParams: any;
 	selectedCountry: any;
 	countries: any[];
+	careerGroups: CareerGroup[];
+	selectedCareerGroup: any[];
 
 	constructor() {
 	}
@@ -22,7 +29,6 @@ export class FilterComponent implements OnInit {
 	}
 
 	getCountryList() {
-
 		this.countries = [
 			{ name: 'Australia', code: 'AU' },
 			{ name: 'Brazil', code: 'BR' },
@@ -35,12 +41,20 @@ export class FilterComponent implements OnInit {
 			{ name: 'Spain', code: 'ES' },
 			{ name: 'United States', code: 'US' }
 		];
+
+		this.careerGroups = [
+			{ name: 'New York', code: 'NY' },
+			{ name: 'Rome', code: 'RM' },
+			{ name: 'London', code: 'LDN' },
+			{ name: 'Istanbul', code: 'IST' },
+			{ name: 'Paris', code: 'PRS' }
+		];
 	}
 
 	getAccordionList() {
 		this.accordionList = [
 			{ id: 1, name: 'Location' },
-			{ id: 2, name: 'Carrer group' },
+			{ id: 2, name: 'Career group' },
 			{ id: 3, name: 'Phase' },
 			{ id: 4, name: 'Role' },
 			{ id: 5, name: 'Institution' },

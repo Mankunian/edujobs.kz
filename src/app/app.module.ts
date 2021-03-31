@@ -22,6 +22,7 @@ import { TagModule } from 'primeng/tag';
 import { GalleriaModule } from 'primeng/galleria';
 import { ChipModule } from 'primeng/chip';
 import { DropdownModule } from 'primeng/dropdown';
+import { MultiSelectModule } from 'primeng/multiselect';
 
 // Services
 import { JobService } from './components/landing/banner/recommended-jobs/jobs.service';
@@ -88,7 +89,8 @@ import { VacancyListComponent } from './components/main/vacancy-list/vacancy-lis
 		TagModule,
 		GalleriaModule,
 		ChipModule,
-		DropdownModule
+		DropdownModule,
+		MultiSelectModule
 	],
 	providers: [JobService],
 	bootstrap: [AppComponent]
