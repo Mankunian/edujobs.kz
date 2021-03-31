@@ -9,6 +9,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 export class VacancyListComponent implements OnInit {
 	jobList: any;
 	badgeColor: any;
+	severity: string;
 
 	constructor() { }
 
@@ -20,15 +21,17 @@ export class VacancyListComponent implements OnInit {
 		this.jobList.forEach(jobs => {
 			let status = jobs.status;
 			status.forEach(stat => {
+				console.log(stat)
 				if (stat.id === 1) {
-					jobs.severity = 'warning'
+					stat.severity = "warning";
 				} else if (stat.id === 2) {
-					jobs.severity = 'danger'
-				} else {
-					jobs.severity = 'success'
+					stat.severity = 'danger'
+				} else if (stat.id === 3) {
+					stat.severity = 'success'
 				}
 			});
 		});
+		console.log(this.jobList)
 	}
 
 	getJobList() {
@@ -44,6 +47,7 @@ export class VacancyListComponent implements OnInit {
 				description: 'Barnsley College is an exciting place to be. In recent times weve enjoyed considerable success and oreputation for quality and innovation is well known.',
 				status: [
 					{ id: 1, name: 'Job of the week' },
+					{ id: 2, name: 'Ending soon' }
 				]
 			},
 			{
