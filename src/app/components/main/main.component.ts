@@ -11,118 +11,17 @@ import { Subscription } from 'rxjs';
 	providers: [MessageService],
 	encapsulation: ViewEncapsulation.None
 })
-export class MainComponent implements OnInit, OnDestroy {
-	accordionList: any;
-	jobList: any[];
-	message: any;
-	subscription: Subscription;
-	msgs1: ({ severity: string; summary: string; detail: string; icon?: undefined; } | { severity: string; summary: string; detail: string; icon: string; })[];
-	hideMessage: boolean;
-	badgeColor: string;
+export class MainComponent implements OnInit {
 
 
-	constructor(private shareData: ShareDataService) { }
+	constructor() { }
 
 	ngOnInit(): void {
-		this.getParams();
-		this.getAccordionList();
-		this.getJobList();
 	}
 
-	ngOnDestroy() {
-		this.subscription.unsubscribe();
-	}
 
-	getParams() {
-		this.subscription = this.shareData.currentMessage.subscribe((response: any) => {
-			if (response !== 0) {
-				this.message = JSON.parse(response);
-				let obj_keys = Object.keys(this.message);
-				if (obj_keys.length === 2) {
-					this.msgs1 = [
-						{ severity: 'custom', summary: this.message.job_title, detail: '', icon: 'pi-file' },
-						{ severity: 'custom', summary: this.message.region, detail: '', icon: 'pi-file' }
-					];
-				} else {
-					if (obj_keys[0] === 'job_title') {
-						this.msgs1 = [
-							{ severity: 'custom', summary: this.message.job_title, detail: '', icon: 'pi-file' }
-						];
-					} else {
-						this.msgs1 = [
-							{ severity: 'custom', summary: this.message.region, detail: '', icon: 'pi-file' }
-						];
-					}
 
-				}
-			}
-		})
-	}
 
-	getAccordionList() {
-		this.accordionList = [
-			{ id: 1, name: 'Location' },
-			{ id: 2, name: 'Carrer group' },
-			{ id: 3, name: 'Phase' },
-			{ id: 4, name: 'Role' },
-			{ id: 5, name: 'Institution' },
-			{ id: 6, name: 'Subject' },
-			{ id: 7, name: 'Hours' },
-		]
-	}
-
-	getJobList() {
-		this.jobList = [
-			{
-				id: 1,
-				job_title: 'Group director of digital delivery and improvement',
-				location: 'Barnsley, South Yorkshire',
-				salary: '$52, 324',
-				posted: '18th March 2021',
-				school: 'Barnsley college',
-				contact_term: 'Permanent',
-				description: 'Barnsley College is an exciting place to be. In recent times weve enjoyed considerable success and oreputation for quality and innovation is well known.',
-				status: [
-					{ id: 1, name: 'Job of the week' },
-				]
-			},
-			{
-				id: 2,
-				job_title: 'Group director of digital delivery and improvement',
-				location: 'Barnsley, South Yorkshire',
-				salary: '$52, 324',
-				posted: '18th March 2021',
-				school: 'Barnsley college',
-				contact_term: 'Permanent',
-				description: 'Barnsley College is an exciting place to be. In recent times weve enjoyed considerable success and oreputation for quality and innovation is well known.',
-				status: [{ id: 2, name: 'Ending soon' },]
-			},
-			{
-				id: 3,
-				job_title: 'Group director of digital delivery and improvement',
-				location: 'Barnsley, South Yorkshire',
-				salary: '$52, 324',
-				posted: '18th March 2021',
-				school: 'Barnsley college',
-				contact_term: 'Permanent',
-				description: 'Barnsley College is an exciting place to be. In recent times weve enjoyed considerable success and oreputation for quality and innovation is well known.',
-				status: [{ id: 3, name: 'Fast apply' }]
-			},
-		]
-		this.jobList.forEach(jobs => {
-			let status = jobs.status;
-			status.forEach(stat => {
-				console.log(stat)
-				if (stat.id === 1) {
-					this.badgeColor = 'warning';
-				} else if (stat.id === 2) {
-					this.badgeColor = 'danger';
-				} else {
-					this.badgeColor = 'success';
-				}
-			});
-		});
-	}
 
 
 }

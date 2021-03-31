@@ -13,7 +13,7 @@ export class BannerComponent implements OnInit {
 	job_title: any;
 	mostPopular: any[];
 
-	constructor(private shareData: ShareDataService, private router: Router,) { }
+	constructor(private router: Router,) { }
 
 	ngOnInit(): void {
 		this.getMostPopular();
@@ -24,8 +24,8 @@ export class BannerComponent implements OnInit {
 	}
 
 	searchJobs() {
-		let search_params = { 'region': this.region, 'job_title': this.job_title };
-		this.shareData.changeMessage(JSON.stringify(search_params))
+		let filterParams = [this.region, this.job_title];
+		sessionStorage.setItem('filterParams', JSON.stringify(filterParams));
 		this.router.navigate(['/main'])
 	}
 

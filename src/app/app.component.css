@@ -6,3 +6,13 @@
 	margin-left: 0.25rem;
 	margin-right: 0.25rem;
 }
+
+.quick-panel{
+	position: fixed;
+	right: 0;
+	top: 50%;
+	background-color: #2487ce;
+	height: 150px;
+	width: 45px;
+	display: none;
+}

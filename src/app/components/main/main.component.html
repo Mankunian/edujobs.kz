@@ -1,50 +1,10 @@
 <div class="container">
 	<div class="row mt-4 mb-4">
-
 		<div class="col-md-4 text-center">
-			<div class="mb-3 rounded">
-				<h5 class="text-left">Your filters</h5>
-				<div class="my-filter mb-4">
-					<p-messages [(value)]="msgs1" [enableService]="false"></p-messages>
-				</div>
-				<h5 class="text-left">Refine search</h5>
-				<p-accordion *ngFor="let item of accordionList" class="mt-2">
-					<p-accordionTab header="{{item.name}}">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-							dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-							ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-							voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-							Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-							laborum.</p>
-					</p-accordionTab>
-				</p-accordion>
-
-			</div>
-
+			<app-filter></app-filter>
 		</div>
 		<div class="col-md-8">
-			<h3 class="pb-4 mb-4 fst-italic border-bottom">
-				23 director jobs
-			</h3>
-			<p>
-				<ngb-alert>
-					Alert me! When matching jobs are posted
-				</ngb-alert>
-			</p>
-			<article class="blog-post mt-4" *ngFor="let item of jobList">
-				<p class="blog-post-meta"> <b>Job title:</b> {{item.job_title}} <p-badge severity="{{badgeColor}}" class="badge"
-						*ngFor="let stat of item.status" [value]="stat.name"></p-badge>
-				</p>
-				<p class="blog-post-meta"> <b>Location:</b> {{item.location}}</p>
-				<p class="blog-post-meta"> <b>Salary:</b> {{item.salary}}</p>
-				<p class="blog-post-meta"> <b>Posted:</b> {{item.posted}}</p>
-				<p class="blog-post-meta"> <b>School:</b> {{item.school}}</p>
-				<p class="blog-post-meta"> <b>Contact Term:</b> {{item.contact_term}}</p>
-				<p class="blog-post-meta"> <b>Description:</b> {{item.description}}</p>
-				<button pButton pRipple type="button" label="Apply now" class="p-button-raised p-button-warning"></button>
-				<button pButton pRipple type="button" label="View full job report"
-					class="p-button-raised p-button-help p-button-text"></button>
-			</article>
+			<app-vacancy-list></app-vacancy-list>
 		</div>
 	</div>
 </div>

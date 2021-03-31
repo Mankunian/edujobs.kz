@@ -1,0 +1,15 @@
+.my-filter{
+	width: 100%;
+}
+
+p-chip{
+	margin: 15px 0;
+	display: block;
+	.icon{
+		cursor: pointer;
+	}
+}
+
+.p-chip .p-chip-text{
+	padding: 0.5rem;
+}

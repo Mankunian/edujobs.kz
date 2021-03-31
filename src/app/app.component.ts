@@ -18,7 +18,6 @@ export class AppComponent {
 	 * @memberof MyComponent
 	 */
 	hasRoute(route: string) {
-		console.log(route)
 		return this.router.url.includes(route);
 	}
 }
