@@ -1,5 +1,6 @@
 .background{
 	background-color: rgba(0, 120, 201, 0.5);
+	display: none;
 }
 
 .mb-2{
@@ -9,4 +10,12 @@
 p-tag{
 	margin-left: 0.25rem;
 	margin-right: 0.25rem;
+}
+
+.form-control{
+	width: 100%;
+}
+
+.p-button{
+	// width: 100%;
 }

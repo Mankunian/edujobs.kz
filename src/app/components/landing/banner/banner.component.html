@@ -8,32 +8,28 @@
 			</div>
 		</div>
 		<div class="row mt-2 justify-content-center">
-			<div class="col-xl-7 mt-2 col-lg-6 text-center">
+			<div class="col-xl-5 col-lg-4 mt-2  text-center">
 				<input [(ngModel)]="job_title" type="text" name="title" class="form-control" id="title"
 					placeholder="Job title, keywords or school name" data-rule="minlen:4"
 					data-msg="Please enter at least 4 chars" />
 				<div class="validate"></div>
 			</div>
-			<div class="col-xl-7 mt-2 col-lg-6 text-center">
+			<div class="col-xl-5  col-lg-4 mt-2 text-center">
 				<input [(ngModel)]="region" type="text" name="region" class="form-control" id="region"
 					placeholder="Town, city or postcode" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
 				<div class="validate"></div>
 			</div>
+			<div class="col-xl-2  col-lg-4 mt-2 text-center">
+				<p-button (click)="searchJobs()" label="Search jobs" styleClass="p-button-md"></p-button>
+			</div>
 		</div>
-		<div class="text-center mt-2">
-			<p-button (click)="searchJobs()" label="Search" icon="pi pi-send" styleClass="p-button-md"></p-button>
+		<div class="most-popular pt-2">
+			<div class="text-center">
+				<p-tag *ngFor="let item of mostPopular" [value]=item></p-tag>
+			</div>
 		</div>
 		<div class="mt-4 background">
 			<div class="os">
-				<div class="most-popular pt-2">
-					<h5 class="text-center">Most popular</h5>
-					<div class="text-center">
-						<p-tag *ngFor="let item of mostPopular" [value]=item></p-tag>
-					</div>
-				</div>
-				<div class="section-title">
-					<h2 class="mb-2">Your recommended jobs</h2>
-				</div>
 				<app-recommended-jobs></app-recommended-jobs>
 			</div>
 		</div>
