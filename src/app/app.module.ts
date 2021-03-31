@@ -86,7 +86,7 @@ import { VacancyListComponent } from './components/main/vacancy-list/vacancy-lis
 		HttpClientModule,
 		TagModule,
 		GalleriaModule,
-		ChipModule
+		ChipModule,
 	],
 	providers: [JobService],
 	bootstrap: [AppComponent]

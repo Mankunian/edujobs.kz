@@ -9,12 +9,32 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 export class FilterComponent implements OnInit {
 	accordionList: any;
 	filterParams: any;
+	selectedCountry: string;
+	countries: any[];
 
-	constructor() { }
+	constructor() {
+	}
 
 	ngOnInit(): void {
+		this.getCountryList();
 		this.getAccordionList();
 		this.getFilterParams();
+	}
+
+	getCountryList() {
+
+		this.countries = [
+			{ name: 'Australia', code: 'AU' },
+			{ name: 'Brazil', code: 'BR' },
+			{ name: 'China', code: 'CN' },
+			{ name: 'Egypt', code: 'EG' },
+			{ name: 'France', code: 'FR' },
+			{ name: 'Germany', code: 'DE' },
+			{ name: 'India', code: 'IN' },
+			{ name: 'Japan', code: 'JP' },
+			{ name: 'Spain', code: 'ES' },
+			{ name: 'United States', code: 'US' }
+		];
 	}
 
 	getAccordionList() {
