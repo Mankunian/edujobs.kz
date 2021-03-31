@@ -1,9 +1,12 @@
 <div class="mb-3 rounded">
-	<h5 class="text-left">Your filters</h5>
 	<div class="my-filter mb-4 text-left">
-		<p-chip *ngFor="let item of filterParams; let i = index" label="{{item}}" [removable]="false">
+		<h5 class="text-left">Your filters</h5>
+		<div class="filter" *ngFor="let item of filterParams">
+			<span>{{item}} <i class="pi pi-times icon" (click)="removeParam(item)"></i></span>
+		</div>
+		<!-- <p-chip *ngFor="let item of filterParams; let i = index" label="{{item}}" [removable]="false">
 			<i class="pi pi-times icon" (click)="removeParam(item)"></i>
-		</p-chip>
+		</p-chip> -->
 	</div>
 	<h5 class="text-left">Refine search</h5>
 	<p-accordion *ngFor="let item of accordionList" class="mt-2">
