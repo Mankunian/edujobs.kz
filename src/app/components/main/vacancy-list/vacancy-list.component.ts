@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
 	selector: 'app-vacancy-list',
 	templateUrl: './vacancy-list.component.html',
-	styleUrls: ['./vacancy-list.component.scss']
+	styleUrls: ['./vacancy-list.component.scss'],
+	encapsulation: ViewEncapsulation.None
 })
 export class VacancyListComponent implements OnInit {
 	jobList: any;
-	badgeColor: string;
+	badgeColor: any;
 
 	constructor() { }
 
@@ -15,6 +16,20 @@ export class VacancyListComponent implements OnInit {
 		this.getJobList();
 	}
 
+	changeBagdeStatusColor() {
+		this.jobList.forEach(jobs => {
+			let status = jobs.status;
+			status.forEach(stat => {
+				if (stat.id === 1) {
+					jobs.severity = 'warning'
+				} else if (stat.id === 2) {
+					jobs.severity = 'danger'
+				} else {
+					jobs.severity = 'success'
+				}
+			});
+		});
+	}
 
 	getJobList() {
 		this.jobList = [
@@ -53,19 +68,8 @@ export class VacancyListComponent implements OnInit {
 				description: 'Barnsley College is an exciting place to be. In recent times weve enjoyed considerable success and oreputation for quality and innovation is well known.',
 				status: [{ id: 3, name: 'Fast apply' }]
 			},
-		]
-		this.jobList.forEach(jobs => {
-			let status = jobs.status;
-			status.forEach(stat => {
-				if (stat.id === 1) {
-					this.badgeColor = 'warning';
-				} else if (stat.id === 2) {
-					this.badgeColor = 'danger';
-				} else {
-					this.badgeColor = 'success';
-				}
-			});
-		});
+		];
+		this.changeBagdeStatusColor();
 	}
 
 }

@@ -1,13 +1,14 @@
-<h3 class="pb-4 mb-4 border-bottom">
-	23 director jobs
-</h3>
-<p>
-	<ngb-alert>
-		Alert me! When matching jobs are posted
-	</ngb-alert>
+<h3>23 director jobs</h3>
+<p class="border-bottom">
+	<p-messages class="border-bottom" severity="custom">
+		<ng-template pTemplate>
+			<i style="font-size: 2rem" class="icofont-send-mail"></i>
+			<div class="p-ml-2">Alert me when matching jobs are posted</div>
+		</ng-template>
+	</p-messages>
 </p>
 <article class="blog-post mt-4" *ngFor="let item of jobList">
-	<p class="blog-post-meta"> <b>Job title:</b> {{item.job_title}} <p-badge severity="{{badgeColor}}" class="badge"
+	<p class="blog-post-meta"> <b>Job title:</b> {{item.job_title}} <p-badge [severity]="item.severity" class="badge"
 			*ngFor="let stat of item.status" [value]="stat.name"></p-badge>
 	</p>
 	<p class="blog-post-meta"> <b>Location:</b> {{item.location}}</p>

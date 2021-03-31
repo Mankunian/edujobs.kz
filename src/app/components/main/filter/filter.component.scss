@@ -1,4 +1,3 @@
-
 p-chip{
 	margin: 15px 0;
 	display: block;
@@ -13,6 +12,7 @@ p-chip{
 
 .p-dropdown, .p-multiselect{
 	width: 100%;
+	text-align: left !important;
 }
 
 .filter{
@@ -25,9 +25,21 @@ p-chip{
 		cursor: pointer;
 		padding: 3px 0;
 	}
+	.icon:hover{
+		color: green;
+	}
 }
 
 .my-filter{
 	border: 1px solid #dee2e6;
 	padding: 0.5rem;
+}
+
+.country-item{
+	text-align: left !important;
+}
+
+
+.p-accordion .p-accordion-header:not(.p-disabled).p-highlight .p-accordion-header-link:focus{
+	text-decoration: none;
 }
