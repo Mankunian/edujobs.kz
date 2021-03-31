@@ -23,7 +23,12 @@
 			</p-dropdown>
 
 			<p-multiSelect *ngIf="item.name === 'Career group'" [options]="careerGroups" [(ngModel)]="selectedCareerGroup"
-				defaultLabel="Select a career groups" optionLabel="name" display="chip"></p-multiSelect>
+				defaultLabel="Select a career groups" optionLabel="name" display="chip">
+			</p-multiSelect>
+
+			<p-multiSelect *ngIf="item.name === 'Phase'" [options]="phaseList" [(ngModel)]="selectedPhase"
+				defaultLabel="Select a career groups" optionLabel="name" display="chip">
+			</p-multiSelect>
 
 		</p-accordionTab>
 	</p-accordion>

@@ -5,6 +5,11 @@ interface CareerGroup {
 	code: string
 }
 
+interface Phase {
+	name: string,
+	code: string
+}
+
 @Component({
 	selector: 'app-filter',
 	templateUrl: './filter.component.html',
@@ -17,15 +22,19 @@ export class FilterComponent implements OnInit {
 	selectedCountry: any;
 	countries: any[];
 	careerGroups: CareerGroup[];
+	phaseList: Phase[];
 	selectedCareerGroup: any[];
+	selectedPhase: any[];
 
 	constructor() {
 	}
 
 	ngOnInit(): void {
-		this.getCountryList();
-		this.getAccordionList();
 		this.getFilterParams();
+		this.getAccordionList();
+		this.getCountryList();
+		this.getCareerGroups();
+		this.getPhaseList();
 	}
 
 	getCountryList() {
@@ -41,13 +50,23 @@ export class FilterComponent implements OnInit {
 			{ name: 'Spain', code: 'ES' },
 			{ name: 'United States', code: 'US' }
 		];
+	}
 
+	getCareerGroups() {
 		this.careerGroups = [
-			{ name: 'New York', code: 'NY' },
-			{ name: 'Rome', code: 'RM' },
-			{ name: 'London', code: 'LDN' },
-			{ name: 'Istanbul', code: 'IST' },
-			{ name: 'Paris', code: 'PRS' }
+			{ name: 'Leadership/Management', code: 'NY' },
+			{ name: 'Support/Non-Teaching', code: 'RM' },
+			{ name: 'Teaching/Lecturing', code: 'LDN' }
+		];
+	}
+
+	getPhaseList() {
+		this.phaseList = [
+			{ name: 'Primary', code: 'NY' },
+			{ name: 'Secondary', code: 'RM' },
+			{ name: 'Senior', code: 'LDN' },
+			{ name: 'Sixth form', code: 'LDN' },
+			{ name: 'Nursery', code: 'LDN' }
 		];
 	}
 
