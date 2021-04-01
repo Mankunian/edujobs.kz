@@ -36,4 +36,11 @@ export class BannerComponent implements OnInit {
 		}
 	}
 
+	goMainByTag(item) {
+		console.log(item)
+		let filterParams = [item];
+		sessionStorage.setItem('filterParams', JSON.stringify(filterParams));
+		this.router.navigate(['/main']);
+	}
+
 }

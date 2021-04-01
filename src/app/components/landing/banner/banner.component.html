@@ -25,7 +25,7 @@
 		</div>
 		<div class="most-popular pt-2">
 			<div class="text-center">
-				<p-tag *ngFor="let item of mostPopular" [value]=item></p-tag>
+				<p-tag (click)="goMainByTag(item)" *ngFor="let item of mostPopular" [value]=item></p-tag>
 			</div>
 		</div>
 		<div class="mt-4 background">

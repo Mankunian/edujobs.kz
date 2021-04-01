@@ -10,5 +10,6 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 export class LandingComponent implements OnInit {
 
 	ngOnInit(): void {
+		sessionStorage.removeItem('filterParams')
 	}
 }
