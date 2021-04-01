@@ -1,0 +1,19 @@
+// Малые девайсы («ландшафтные телефоны», >= 576px)
+@media (min-width: 576px) { 
+	.col-lg-9{
+		text-align: center;
+	}
+ }
+
+// Средние девайсы («таблетки», >= 768px)
+@media (min-width: 768px) { 
+	.col-lg-9{
+		text-align: center;
+	}
+ }
+
+// Большие девайсы (десктопы, >= 992px)
+@media (min-width: 992px) {  }
+
+// Экстрабольшие девайсы (большие десктопы, >= 1200px)
+@media (min-width: 1200px) {  }

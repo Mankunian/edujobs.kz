@@ -46,14 +46,29 @@
 						<li><a class="dropdown-item" href="#">Something else here</a></li>
 					</ul>
 				</li>
+				<li class="nav-item dropdown">
+					<p-dropdown [options]="langs" [(ngModel)]="selectedLang" optionLabel="name" [filter]="true" filterBy="name"
+						[showClear]="true" placeholder="Выберите язык">
+						<ng-template pTemplate="selectedItem">
+							<div class="country-item country-item-value" *ngIf="selectedLang">
+								<div>{{selectedLang.name}}</div>
+							</div>
+						</ng-template>
+						<ng-template let-country pTemplate="item">
+							<div class="country-item">
+								<div><img width="25px" src="assets/img/custom/{{country.code}}.png"> {{country.name}}</div>
+							</div>
+						</ng-template>
+					</p-dropdown>
+				</li>
 			</ul>
 			<form class="nav-btn-group" *ngIf="hasRoute('/') && !hasRoute('recruit')">
 				<button routerLink="/login" pButton pRipple type="button" label="Sign in"
 					class="p-button-raised p-button-danger p-button-sm"></button>
-				<!-- <button pButton pRipple type="button" label="Register CV"
+				<button pButton pRipple type="button" label="Register CV"
 					class="p-button-raised p-button-warning p-button-sm"></button>
 				<button routerLink="/recruit" pButton pRipple type="button" label="Recruiting? Post a vacancy"
-					class="p-button-raised p-button-help p-button-sm"></button> -->
+					class="p-button-raised p-button-help p-button-sm"></button>
 			</form>
 			<form class="nav-btn-group" *ngIf="hasRoute('recruit')">
 				<button pButton pRipple type="button" label="Sign in/Register"

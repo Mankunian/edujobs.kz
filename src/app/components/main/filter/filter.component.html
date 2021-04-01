@@ -1,11 +1,11 @@
 <div class="mb-3 rounded">
-	<div class="my-filter mb-4 text-left">
+	<div *ngIf="filterParams" class="my-filter mb-4 text-left">
 		<h5 class="text-left">Your filters</h5>
 		<div class="filter" *ngFor="let item of filterParams">
 			<span>{{item}} <i class="pi pi-times icon" (click)="removeParam(item)"></i></span>
 		</div>
 	</div>
-	<h5 class="text-left">Refine search</h5>
+	<h5 class="text-left">Фильтрация</h5>
 	<p-accordion *ngFor="let item of accordionList" class="mt-2">
 		<p-accordionTab header="{{item.name}}">
 			<p-dropdown *ngIf="item.name === 'Location'" ngDefaultControl [options]="countries" [(ngModel)]="selectedCountry"
@@ -27,7 +27,15 @@
 			</p-multiSelect>
 
 			<p-multiSelect *ngIf="item.name === 'Phase'" [options]="phaseList" [(ngModel)]="selectedPhase"
-				defaultLabel="Select a career groups" optionLabel="name" display="chip">
+				defaultLabel="Select phases" optionLabel="name" display="chip">
+			</p-multiSelect>
+
+			<p-multiSelect *ngIf="item.name === 'Role'" [options]="roleList" [(ngModel)]="selectedRole"
+				defaultLabel="Select roles" optionLabel="name" display="chip">
+			</p-multiSelect>
+
+			<p-multiSelect *ngIf="item.name === 'Institution'" [options]="institutionList" [(ngModel)]="selectedInstitution"
+				defaultLabel="Select roles" optionLabel="name" display="chip">
 			</p-multiSelect>
 
 		</p-accordionTab>

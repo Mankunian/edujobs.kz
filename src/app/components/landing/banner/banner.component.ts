@@ -24,9 +24,16 @@ export class BannerComponent implements OnInit {
 	}
 
 	searchJobs() {
-		let filterParams = [this.region, this.job_title];
-		sessionStorage.setItem('filterParams', JSON.stringify(filterParams));
-		this.router.navigate(['/main'])
+		let region = this.region;
+		let job_title = this.job_title;
+
+		if (region || job_title) {
+			let filterParams = [this.region, this.job_title];
+			sessionStorage.setItem('filterParams', JSON.stringify(filterParams));
+			this.router.navigate(['/main'])
+		} else {
+			this.router.navigate(['/main'])
+		}
 	}
 
 }

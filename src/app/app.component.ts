@@ -7,8 +7,15 @@ import { Router } from '@angular/router';
 	styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-	constructor(private router: Router,) { }
+	langs: any[];
+	selectedLang: any;
+	constructor(private router: Router,) {
+		this.langs = [
+			{ name: 'Русский', code: 'rus' },
+			{ name: 'Қазақша', code: 'kaz' },
+			{ name: 'English', code: 'eng' }
+		];
+	}
 
 	/**
 	 * Check if the router url contains the specified route

@@ -10,6 +10,16 @@ interface Phase {
 	code: string
 }
 
+interface Role {
+	name: string,
+	id: number
+}
+
+interface Institution {
+	name: string,
+	id: number
+}
+
 @Component({
 	selector: 'app-filter',
 	templateUrl: './filter.component.html',
@@ -19,12 +29,16 @@ interface Phase {
 export class FilterComponent implements OnInit {
 	accordionList: any;
 	filterParams: any;
-	selectedCountry: any;
 	countries: any[];
 	careerGroups: CareerGroup[];
 	phaseList: Phase[];
+	roleList: Role[];
+	institutionList: Institution[];
+	selectedCountry: any;
 	selectedCareerGroup: any[];
 	selectedPhase: any[];
+	selectedRole: any[];
+	selectedInstitution: any[];
 
 	constructor() {
 	}
@@ -35,6 +49,8 @@ export class FilterComponent implements OnInit {
 		this.getCountryList();
 		this.getCareerGroups();
 		this.getPhaseList();
+		this.getRoleList();
+		this.getInstitution();
 	}
 
 	getCountryList() {
@@ -68,6 +84,31 @@ export class FilterComponent implements OnInit {
 			{ name: 'Sixth form', code: 'LDN' },
 			{ name: 'Nursery', code: 'LDN' }
 		];
+	}
+
+	getRoleList() {
+		this.roleList = [
+			{ id: 1, name: 'Teacher' },
+			{ id: 2, name: 'School Governor' },
+			{ id: 3, name: 'MIS' },
+			{ id: 4, name: 'Headteacher' },
+			{ id: 5, name: 'Head of subject' },
+			{ id: 6, name: 'Head of department' },
+			{ id: 7, name: 'HR Manager' },
+			{ id: 8, name: 'Director' },
+			{ id: 9, name: 'Deputy Headteacher' },
+		]
+	}
+
+	getInstitution() {
+		this.institutionList = [
+			{ id: 1, name: 'Академия' },
+			{ id: 2, name: 'Колледж' },
+			{ id: 3, name: 'Группа' },
+			{ id: 4, name: 'Независимая школа' },
+			{ id: 5, name: 'Школа местного самоуправления' },
+			{ id: 6, name: 'Университетский технологический колледж (UTC)' },
+		]
 	}
 
 	getAccordionList() {
