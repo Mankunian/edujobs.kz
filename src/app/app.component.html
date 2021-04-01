@@ -11,8 +11,8 @@
 			<ul class="navbar-nav me-auto mb-2 mb-sm-0">
 
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown"
-						aria-expanded="false">Jobs</a>
+					<a translate class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown"
+						aria-expanded="false">navbar.jobs</a>
 					<ul class="dropdown-menu" aria-labelledby="dropdown03">
 						<li><a class="dropdown-item" href="#">Action</a></li>
 						<li><a class="dropdown-item" href="#">Another action</a></li>
@@ -20,8 +20,8 @@
 					</ul>
 				</li>
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown"
-						aria-expanded="false">Career advice</a>
+					<a translate class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown"
+						aria-expanded="false">navbar.career_advice</a>
 					<ul class="dropdown-menu" aria-labelledby="dropdown03">
 						<li><a class="dropdown-item" href="#">Action</a></li>
 						<li><a class="dropdown-item" href="#">Another action</a></li>
@@ -29,8 +29,8 @@
 					</ul>
 				</li>
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown"
-						aria-expanded="false">Recruiment agency</a>
+					<a translate class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown"
+						aria-expanded="false">navbar.recruitment_agency</a>
 					<ul class="dropdown-menu" aria-labelledby="dropdown03">
 						<li><a class="dropdown-item" href="#">Action</a></li>
 						<li><a class="dropdown-item" href="#">Another action</a></li>
@@ -38,8 +38,8 @@
 					</ul>
 				</li>
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown"
-						aria-expanded="false">Contact us</a>
+					<a translate class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown"
+						aria-expanded="false">navbar.contact_us</a>
 					<ul class="dropdown-menu" aria-labelledby="dropdown03">
 						<li><a class="dropdown-item" href="#">Action</a></li>
 						<li><a class="dropdown-item" href="#">Another action</a></li>
@@ -48,7 +48,7 @@
 				</li>
 				<li class="nav-item dropdown">
 					<p-dropdown (onChange)="onChangeLang(selectedLang)" [options]="langs" [(ngModel)]="selectedLang"
-						optionLabel="name" [filter]="true" filterBy="name" [showClear]="true" placeholder="Выберите язык">
+						optionLabel="name" [filter]="false" filterBy="name" [showClear]="false" placeholder="Выберите язык">
 						<ng-template pTemplate="selectedItem">
 							<div class="country-item country-item-value" *ngIf="selectedLang">
 								<div><img width="25px" src="assets/img/custom/{{selectedLang.code}}.png"> {{selectedLang.name}}</div>
@@ -63,7 +63,7 @@
 				</li>
 			</ul>
 			<form class="nav-btn-group" *ngIf="hasRoute('/') && !hasRoute('recruit')">
-				<button routerLink="/login" pButton pRipple type="button" label="Sign in"
+				<button translate routerLink="/login" pButton pRipple type="button" label="Sign in"
 					class="p-button-raised p-button-danger p-button-sm"></button>
 				<button pButton pRipple type="button" label="Register CV"
 					class="p-button-raised p-button-warning p-button-sm"></button>

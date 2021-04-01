@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+
 
 @Component({
 	selector: 'app-root',
@@ -9,7 +11,8 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit {
 	langs: any[];
 	selectedLang: any;
-	constructor(private router: Router,) {
+	constructor(private router: Router, private translate: TranslateService) {
+		translate.setDefaultLang('rus');
 		this.langs = [
 			{ name: 'Русский', code: 'rus' },
 			{ name: 'Қазақша', code: 'kaz' },
@@ -24,6 +27,7 @@ export class AppComponent implements OnInit {
 
 	onChangeLang(item) {
 		console.log(item)
+		this.translate.setDefaultLang(item.code);
 	}
 
 	/**
