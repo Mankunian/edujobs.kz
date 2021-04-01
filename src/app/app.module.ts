@@ -53,6 +53,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 import { PayPerVacancyComponent } from './components/recruit/pay-per-vacancy/pay-per-vacancy.component';
+import { JobComponent } from './components/landing/sponsored-jobs/job/job.component';
 
 @NgModule({
 	declarations: [
@@ -72,7 +73,8 @@ import { PayPerVacancyComponent } from './components/recruit/pay-per-vacancy/pay
 		RecruitComponent,
 		FilterComponent,
 		VacancyListComponent,
-		PayPerVacancyComponent
+		PayPerVacancyComponent,
+		JobComponent
 	],
 	imports: [
 		BrowserModule,

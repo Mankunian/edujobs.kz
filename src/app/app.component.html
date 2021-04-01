@@ -51,12 +51,12 @@
 						optionLabel="name" [filter]="false" filterBy="name" [showClear]="false" placeholder="Выберите язык">
 						<ng-template pTemplate="selectedItem">
 							<div class="country-item country-item-value" *ngIf="selectedLang">
-								<div><img width="25px" src="assets/img/custom/{{selectedLang.code}}.png"> {{selectedLang.name}}</div>
+								<div><img width="25px" src="assets/img/custom/{{selectedLang.code}}.png"></div>
 							</div>
 						</ng-template>
 						<ng-template let-country pTemplate="item">
 							<div class="country-item">
-								<div><img width="25px" src="assets/img/custom/{{country.code}}.png"> {{country.name}}</div>
+								<div class="text-center"><img width="25px" src="assets/img/custom/{{country.code}}.png"></div>
 							</div>
 						</ng-template>
 					</p-dropdown>
