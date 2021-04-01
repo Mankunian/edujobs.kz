@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 	langs: any[];
 	selectedLang: any;
 	constructor(private router: Router,) {
@@ -15,6 +15,15 @@ export class AppComponent {
 			{ name: 'Қазақша', code: 'kaz' },
 			{ name: 'English', code: 'eng' }
 		];
+	}
+
+	ngOnInit() {
+		this.selectedLang = { name: 'Русский', code: 'rus' };
+		this.onChangeLang(this.selectedLang)
+	}
+
+	onChangeLang(item) {
+		console.log(item)
 	}
 
 	/**

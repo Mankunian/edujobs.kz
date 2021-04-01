@@ -47,11 +47,11 @@
 					</ul>
 				</li>
 				<li class="nav-item dropdown">
-					<p-dropdown [options]="langs" [(ngModel)]="selectedLang" optionLabel="name" [filter]="true" filterBy="name"
-						[showClear]="true" placeholder="Выберите язык">
+					<p-dropdown (onChange)="onChangeLang(selectedLang)" [options]="langs" [(ngModel)]="selectedLang"
+						optionLabel="name" [filter]="true" filterBy="name" [showClear]="true" placeholder="Выберите язык">
 						<ng-template pTemplate="selectedItem">
 							<div class="country-item country-item-value" *ngIf="selectedLang">
-								<div>{{selectedLang.name}}</div>
+								<div><img width="25px" src="assets/img/custom/{{selectedLang.code}}.png"> {{selectedLang.name}}</div>
 							</div>
 						</ng-template>
 						<ng-template let-country pTemplate="item">
