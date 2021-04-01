@@ -11,6 +11,8 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent implements OnInit {
 	langs: any[];
 	selectedLang: any;
+	showPanel: boolean;
+
 	constructor(private router: Router, private translate: TranslateService) {
 		translate.setDefaultLang('rus');
 		this.langs = [
