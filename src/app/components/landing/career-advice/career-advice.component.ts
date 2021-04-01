@@ -16,9 +16,9 @@ export class CareerAdviceComponent implements OnInit {
 
 	getCarrerAdvice() {
 		this.carrerAdvice = [
-			{ id: 1, title: 'Lorem Ipsum', description: 'Lorem ipsum', img: 'assets/img/custom/5.jpg' },
-			{ id: 2, title: 'Lorem Ipsum', description: 'Lorem ipsum', img: 'assets/img/custom/5.jpg' },
-			{ id: 3, title: 'Lorem Ipsum', description: 'Lorem ipsum', img: 'assets/img/custom/5.jpg' },
+			{ id: 1, title: 'International-mindedness is a frame of mind...', description: 'Lorem ipsum', img: 'assets/img/custom/5.jpg' },
+			{ id: 2, title: 'Which school is right for you?', description: 'Lorem ipsum', img: 'assets/img/custom/7.jpg' },
+			{ id: 3, title: 'My autistic view of education', description: 'Lorem ipsum', img: 'assets/img/custom/8.jpg' },
 		]
 	}
 

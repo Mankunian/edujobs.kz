@@ -3,23 +3,26 @@
 	<div class="container" data-aos="fade-up">
 
 		<div class="section-title">
-			<h2>Sponsored jobs</h2>
-			<h5>Your next role could be a click away. Apply today.</h5>
+			<h2 translate>sponsored_jobs.title</h2>
+			<h5 translate>sponsored_jobs.subtitle</h5>
 		</div>
 
 		<div class="row">
 			<div *ngFor="let item of sponsoredJobs" class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in"
 				data-aos-delay="100">
 				<div class="icon-box iconbox-blue mb-4">
-					<div class="icon">
-						<img src="assets/img/custom/1.jpg" alt="">
-					</div>
-					<h4><a>{{item.title}}</a></h4>
-					<div class="text-left icon-group">
-						<p><i style="font-size: 1.4rem;" class="icofont-location-pin"></i> {{item.location}}</p>
-						<p><i style="font-size: 1.4rem;" class="bi bi-house-fill"></i> {{item.school}}</p>
-						<p><i style="font-size: 1.4rem;" class="bi bi-cash"></i> {{item.price}}</p>
-						<p><i style="font-size: 1.4rem;" class="bi bi-clock-fill"></i> {{item.time}}</p>
+
+					<h4 class="text-left"><a>{{item.title}}</a></h4>
+					<div class="row">
+						<div class="text-left icon-group col">
+							<p><i style="font-size: 1.4rem;" class="icofont-location-pin"></i> {{item.location}}</p>
+							<p><i style="font-size: 1.4rem;" class="bi bi-house-fill"></i> {{item.school}}</p>
+							<p><i style="font-size: 1.4rem;" class="bi bi-cash"></i> {{item.price}}</p>
+							<p><i style="font-size: 1.4rem;" class="bi bi-clock-fill"></i> {{item.time}}</p>
+						</div>
+						<div class="icon col">
+							<img width="100%" src="assets/img/custom/{{item.img}}" alt="">
+						</div>
 					</div>
 				</div>
 			</div>
