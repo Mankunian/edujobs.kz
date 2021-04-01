@@ -23,6 +23,7 @@ import { GalleriaModule } from 'primeng/galleria';
 import { ChipModule } from 'primeng/chip';
 import { DropdownModule } from 'primeng/dropdown';
 import { MultiSelectModule } from 'primeng/multiselect';
+import { StepsModule } from 'primeng/steps';
 
 // Services
 import { JobService } from './components/landing/banner/recommended-jobs/jobs.service';
@@ -51,6 +52,7 @@ import { VacancyListComponent } from './components/main/vacancy-list/vacancy-lis
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
+import { PayPerVacancyComponent } from './components/recruit/pay-per-vacancy/pay-per-vacancy.component';
 
 @NgModule({
 	declarations: [
@@ -69,7 +71,8 @@ import { HttpClient } from '@angular/common/http';
 		RecommendedJobsComponent,
 		RecruitComponent,
 		FilterComponent,
-		VacancyListComponent
+		VacancyListComponent,
+		PayPerVacancyComponent
 	],
 	imports: [
 		BrowserModule,
@@ -100,7 +103,8 @@ import { HttpClient } from '@angular/common/http';
 				useFactory: HttpLoaderFactory,
 				deps: [HttpClient]
 			}
-		})
+		}),
+		StepsModule
 	],
 	providers: [JobService],
 	bootstrap: [AppComponent]
