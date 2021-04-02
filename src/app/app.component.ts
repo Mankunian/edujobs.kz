@@ -30,6 +30,8 @@ export class AppComponent implements OnInit {
 	}
 
 	onChangeLang(item) {
+		console.log(item)
+		this.selectedLang = item;
 		this.translate.setDefaultLang(item.code);
 	}
 
