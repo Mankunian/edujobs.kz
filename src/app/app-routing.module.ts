@@ -8,7 +8,7 @@ import { PayPerVacancyComponent } from './components/recruit/pay-per-vacancy/pay
 import { RecruitComponent } from './components/recruit/recruit.component';
 
 const routes: Routes = [
-	{ path: '', component: LandingComponent },
+	{ path: '', component: LandingComponent, pathMatch: 'full' },
 	{ path: 'landing', component: LandingComponent },
 	{ path: 'main', component: MainComponent },
 	{ path: 'login', component: LoginRegisterComponent },
