@@ -8,10 +8,9 @@ import { PhotoService } from 'src/app/services/photo.service';
 	styleUrls: ['./slider-section.component.scss']
 })
 export class SliderSectionComponent implements OnInit {
-	// images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
 	images: any[];
 	constructor(config: NgbCarouselConfig, private photoService: PhotoService) {
-		config.interval = 3000;
+		config.interval = 5000;
 		config.wrap = false;
 		config.keyboard = false;
 		config.pauseOnHover = false;
