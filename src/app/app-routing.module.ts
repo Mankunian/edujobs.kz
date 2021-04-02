@@ -14,7 +14,7 @@ const routes: Routes = [
 	{ path: 'login', component: LoginRegisterComponent },
 	{ path: 'recruit', component: RecruitComponent },
 	{ path: 'recruit/pay-per-vacancy', component: PayPerVacancyComponent },
-	{ path: 'job/:id', component: JobComponent },
+	{ path: 'job/:id', component: JobComponent, },
 	{ path: '**', component: LandingComponent }
 ];
 // configures NgModule imports and exports

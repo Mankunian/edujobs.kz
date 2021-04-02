@@ -7,7 +7,7 @@
 		</ng-template>
 	</p-messages>
 </p>
-<article class="blog-post mt-4" *ngFor="let item of jobList">
+<article (click)="routeJobInfo(item)" class="blog-post mt-4" *ngFor="let item of jobList">
 	<p class="blog-post-meta"> <b>Job title:</b> {{item.job_title}}
 		<p-badge [severity]="stat?.severity" class="badge" *ngFor="let stat of item.status; let i = index"
 			[value]="stat?.name">

@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ShareDataService } from 'src/app/services/share-data.service';
 
 @Component({
@@ -8,8 +8,8 @@ import { ShareDataService } from 'src/app/services/share-data.service';
 })
 export class JobComponent implements OnInit {
 	products: any;
-
-	responsiveOptions; jobInfo: any;
+	responsiveOptions;
+	jobInfo: any;
 
 
 	constructor(private share: ShareDataService) {
@@ -30,12 +30,16 @@ export class JobComponent implements OnInit {
 				numScroll: 1
 			}
 		];
+		this.jobInfo = JSON.parse(sessionStorage.getItem('jobInfo'));
 	}
 
 	ngOnInit(): void {
-		this.jobInfo = JSON.parse(sessionStorage.getItem('jobInfo'));
-		this.changeBagdeStatusColor();
-		this.jobsList();
+
+		console.log(this.jobInfo)
+		if (this.jobInfo) {
+			this.changeBagdeStatusColor();
+			this.jobsList();
+		}
 	}
 
 	changeBagdeStatusColor() {

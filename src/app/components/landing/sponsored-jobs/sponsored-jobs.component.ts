@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ShareDataService } from 'src/app/services/share-data.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { ShareDataService } from 'src/app/services/share-data.service';
 export class SponsoredJobsComponent implements OnInit {
 	sponsoredJobs: any;
 
-	constructor(private share: ShareDataService) { }
+	constructor(public _router: Router) { }
 
 	ngOnInit(): void {
 		this.getSponsoredJobs();
@@ -72,7 +73,9 @@ export class SponsoredJobsComponent implements OnInit {
 	}
 
 	routeJobInfo(item) {
-		sessionStorage.setItem('jobInfo', JSON.stringify(item))
+		sessionStorage.setItem('jobInfo', JSON.stringify(item));
+		let jobId = item.id;
+		this._router.navigate(['job', jobId]);
 	}
 
 

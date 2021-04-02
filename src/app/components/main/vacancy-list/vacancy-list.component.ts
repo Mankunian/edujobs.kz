@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-vacancy-list',
@@ -11,7 +12,7 @@ export class VacancyListComponent implements OnInit {
 	badgeColor: any;
 	severity: string;
 
-	constructor() { }
+	constructor(private _router: Router) { }
 
 	ngOnInit(): void {
 		this.getJobList();
@@ -80,6 +81,12 @@ export class VacancyListComponent implements OnInit {
 			},
 		];
 		this.changeBagdeStatusColor();
+	}
+
+	routeJobInfo(item) {
+		sessionStorage.setItem('jobInfo', JSON.stringify(item));
+		let jobId = item.id;
+		this._router.navigate(['/job', jobId]);
 	}
 
 }
