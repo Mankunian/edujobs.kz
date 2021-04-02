@@ -12,16 +12,16 @@
 				data-aos-delay="100">
 				<div class="member featured_school">
 					<div class="member-img">
-						<img width="100" [src]="item.img" class="img-fluid" alt="">
+						<img width="150" [src]="item.img" class="img-fluid" alt="">
 
 					</div>
 					<div class="member-info">
 						<h4>{{item.title}}</h4>
 					</div>
 					<div class="social">
-						<a><i class="icofont-eye-alt"></i></a>
-						<a><i class="icofont-heart-alt"></i></a>
-						<a><i class="icofont-bag-alt"></i></a>
+						<a><i (click)="viewCompany(item)" class="icofont-eye-alt"></i></a>
+						<a><i (click)="saveCompany(item)" class="icofont-heart-alt"></i></a>
+						<a><i (click)="viewJobs(item)" class="icofont-bag-alt"></i></a>
 					</div>
 				</div>
 			</div>

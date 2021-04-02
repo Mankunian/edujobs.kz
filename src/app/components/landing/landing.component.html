@@ -4,5 +4,13 @@
 <app-slider-section></app-slider-section>
 <app-featured-jobs></app-featured-jobs>
 <app-career-advice></app-career-advice>
-<app-service-section></app-service-section>
+<!-- <app-service-section></app-service-section> -->
 <app-location-guides></app-location-guides>
+
+<p-dialog header="Header" [(visible)]="displayResponsive" [breakpoints]="{'960px': '75vw'}" [style]="{width: '50vw'}"
+	[baseZIndex]="10000" [modal]="true" [draggable]="false" [resizable]="false">
+	<iframe width="100%" height="315" src="https://www.youtube.com/embed/jEIb4EAT2ts" title="YouTube video player"
+		frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+		allowfullscreen></iframe>
+
+</p-dialog>

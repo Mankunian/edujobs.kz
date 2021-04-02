@@ -8,8 +8,10 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 	encapsulation: ViewEncapsulation.None
 })
 export class LandingComponent implements OnInit {
+	displayResponsive: boolean;
 
 	ngOnInit(): void {
+		this.displayResponsive = true;
 		sessionStorage.removeItem('filterParams')
 	}
 }

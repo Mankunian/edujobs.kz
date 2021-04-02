@@ -3,17 +3,23 @@
 		{
 			"previewImageSrc": "https://images6.alphacoders.com/589/thumb-1920-589599.jpg",
 			"thumbnailImageSrc": "https://images6.alphacoders.com/589/thumb-1920-589599.jpg",
-			"title": "Найди свое место в столице"
+			"title": "Найди свое место в столице",
+			"id": 1,
+			"name": "Нур-султан"
 		},
 		{
 			"previewImageSrc": "http://someplace.kz/media/k2/items/cache/398a8bc2e3f7f879ff0986359513be80_XL.jpg",
 			"thumbnailImageSrc": "http://someplace.kz/media/k2/items/cache/398a8bc2e3f7f879ff0986359513be80_XL.jpg",
-			"title": "Самые вкусные позиции в Шымкенте"
+			"title": "Самые вкусные позиции в Шымкенте",
+			"id": 2,
+			"name": "Шымкент"
 		},
 		{
 			"previewImageSrc": "https://tripplanet.ru/wp-content/uploads/asia/kazakhstan/alma-ata/dostoprimechatelnosti-alma-aty.jpg",
 			"thumbnailImageSrc": "https://tripplanet.ru/wp-content/uploads/asia/kazakhstan/alma-ata/dostoprimechatelnosti-alma-aty.jpg",
-			"title": "Исследуйте горы и новые вакансии в Алматы"
+			"title": "Исследуйте горы и новые вакансии в Алматы",
+			"id": 3,
+			"name": "Алматы"
 		}
 	]
 }

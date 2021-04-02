@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { PhotoService } from 'src/app/services/photo.service';
 
@@ -9,7 +10,7 @@ import { PhotoService } from 'src/app/services/photo.service';
 })
 export class SliderSectionComponent implements OnInit {
 	images: any[];
-	constructor(config: NgbCarouselConfig, private photoService: PhotoService) {
+	constructor(config: NgbCarouselConfig, private photoService: PhotoService, private router: Router) {
 		config.interval = 5000;
 		config.wrap = false;
 		config.keyboard = false;
@@ -19,6 +20,13 @@ export class SliderSectionComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.photoService.getImages().then(images => this.images = images);
+	}
+
+	searchJob(item) {
+		let region = item.name;
+		let filterParams = [region];
+		sessionStorage.setItem('filterParams', JSON.stringify(filterParams));
+		this.router.navigate(['/main'])
 	}
 
 	responsiveOptions: any[] = [

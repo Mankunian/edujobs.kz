@@ -46,15 +46,14 @@ import { LandingComponent } from './components/landing/landing.component';
 import { MainComponent } from './components/main/main.component';
 import { FilterComponent } from './components/main/filter/filter.component';
 import { VacancyListComponent } from './components/main/vacancy-list/vacancy-list.component';
-
-
+import { PayPerVacancyComponent } from './components/recruit/pay-per-vacancy/pay-per-vacancy.component';
+import { JobComponent } from './components/landing/sponsored-jobs/job/job.component';
+import { CompanyInfoComponent } from "./components/landing/featured-jobs/company-info/company-info.component";
 
 // import ngx-translate and the http loader
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
-import { PayPerVacancyComponent } from './components/recruit/pay-per-vacancy/pay-per-vacancy.component';
-import { JobComponent } from './components/landing/sponsored-jobs/job/job.component';
 
 @NgModule({
 	declarations: [
@@ -75,7 +74,8 @@ import { JobComponent } from './components/landing/sponsored-jobs/job/job.compon
 		FilterComponent,
 		VacancyListComponent,
 		PayPerVacancyComponent,
-		JobComponent
+		JobComponent,
+		CompanyInfoComponent
 	],
 	imports: [
 		BrowserModule,

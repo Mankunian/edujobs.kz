@@ -12,7 +12,6 @@ export class AppComponent implements OnInit {
 	langs: any[];
 	selectedLang: any;
 	showPanel: boolean;
-	displayResponsive: boolean;
 
 	constructor(private router: Router, private translate: TranslateService) {
 		translate.setDefaultLang('rus');
@@ -24,7 +23,6 @@ export class AppComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.displayResponsive = true;
 		this.selectedLang = { name: 'Русский', code: 'rus' };
 		this.onChangeLang(this.selectedLang)
 	}

@@ -10,8 +10,12 @@
 			<div (click)="routeJobInfo(item)" *ngFor="let item of sponsoredJobs"
 				class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
 				<div class="icon-box iconbox-blue mb-4">
-
-					<h4 class="text-left"><a>{{item.title}}</a></h4>
+					<div class="text-left">
+						<h4><a>{{item.title}}</a></h4>
+						<p-badge [severity]="stat?.severity" class="badge mb-2" *ngFor="let stat of item.status; let i = index"
+							[value]="stat?.name">
+						</p-badge>
+					</div>
 					<div class="row">
 						<div class="text-left icon-group col">
 							<p><i style="font-size: 1.4rem;" class="icofont-location-pin"></i> {{item.location}}</p>

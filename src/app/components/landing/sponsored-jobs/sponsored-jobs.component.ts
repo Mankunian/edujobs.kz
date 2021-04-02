@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { ShareDataService } from 'src/app/services/share-data.service';
 
 @Component({
 	selector: 'app-sponsored-jobs',
 	templateUrl: './sponsored-jobs.component.html',
-	styleUrls: ['./sponsored-jobs.component.scss']
+	styleUrls: ['./sponsored-jobs.component.scss'],
+	encapsulation: ViewEncapsulation.None
 })
 export class SponsoredJobsComponent implements OnInit {
 	sponsoredJobs: any;
