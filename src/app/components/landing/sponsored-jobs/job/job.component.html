@@ -1,12 +1,14 @@
-<main *ngIf="jobInfo" role="main" class="container mb-4">
+<div class="container">
 	<div class="row mt-4">
 		<div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
 			<img width="100%" src="assets/img/custom/44.png" alt="">
 		</div>
 	</div>
+</div>
+
+<main *ngIf="jobInfo" role="main" class="container mb-4">
 	<div class="row">
 		<div class="col-md-8 blog-main">
-			<!-- <p-tag class="mr-2" styleClass="p-mr-2" value="Primary"></p-tag> -->
 			<p-badge [severity]="stat?.severity" class="badge" *ngFor="let stat of jobInfo.status; let i = index"
 				[value]="stat?.name">
 			</p-badge>
@@ -73,7 +75,7 @@
 					pTooltip="XLS" tooltipPosition="bottom"></button>
 			</div>
 
-			<div class="blog-post-5 mt-4">
+			<div class="blog-post-5 mt-4 mb-4">
 				<h4>Safeguarding Statement:</h4>
 				<p>Budmouth College is committed to safeguarding and promoting the welfare of children, young people and
 					vulnerable adults and expects all staff and volunteers to share this commitment.We particularly welcome
@@ -95,7 +97,11 @@
 					class="p-button-raised p-button-text mb-2	"></button>
 			</div>
 
-			<div class="p-3">
+			<div class="apply-btn ">
+				<button pButton pRipple type="button" label="Fast Apply" class="p-button-raised p-button-warning"></button>
+			</div>
+
+			<div class="p-3 mt-3">
 				<p-carousel [autoplayInterval]="3000" [value]="products" orientation="vertical" [style]="{'max-width':'400px'}"
 					verticalViewPortHeight="352px" [numVisible]="1" [numScroll]="1">
 					<ng-template pTemplate="header">
@@ -109,8 +115,8 @@
 									<img src="assets/img/custom/6.jpg" [alt]="product.name" class="product-image" />
 								</div>
 								<div>
-									<h4 class="p-mb-1">{{product.name}}</h4>
-									<h6 class="p-mt-0 p-mb-3">${{product.price}}</h6>
+									<h4 class="p-mb-1 mt-2">{{product.name}}</h4>
+									<h6 class="p-mt-0 p-mb-3">{{product.price}}</h6>
 									<span>{{product.inventoryStatus}}</span>
 									<div class="car-buttons p-mt-5">
 										<button pButton pRipple type="button" label="View this job"
