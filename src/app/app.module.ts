@@ -24,6 +24,7 @@ import { ChipModule } from 'primeng/chip';
 import { DropdownModule } from 'primeng/dropdown';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { StepsModule } from 'primeng/steps';
+import { DialogModule } from 'primeng/dialog';
 
 // Services
 import { JobService } from './components/landing/banner/recommended-jobs/jobs.service';
@@ -99,6 +100,7 @@ import { JobComponent } from './components/landing/sponsored-jobs/job/job.compon
 		ChipModule,
 		DropdownModule,
 		MultiSelectModule,
+		DialogModule,
 		TranslateModule.forRoot({
 			loader: {
 				provide: TranslateLoader,
