@@ -1,0 +1,49 @@
+.jumbotron{
+	padding: 0 !important;
+}
+
+.font-bold{
+	font-weight: 700;
+}
+
+.blog-post-1{
+	background-color: #dee2e6;
+	border: 1px solid;
+	p{
+		font-weight: 700;
+	}
+	span{
+		font-weight: normal;
+	}
+}
+.blog-post-3{
+	p{
+		font-weight: 700;
+		text-decoration: underline;
+	}
+}
+
+
+.rounded button{
+	width: 100%;
+}
+
+
+.product-item {
+	.product-item-content {
+			border: 1px solid var(--surface-d);
+			border-radius: 3px;
+			margin: .3rem;
+			text-align: center;
+			padding: 2rem 0;
+	}
+
+	.product-image {
+			width: 50%;
+			box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+	}
+}
+
+p-badge{
+	padding-left: 0;
+}

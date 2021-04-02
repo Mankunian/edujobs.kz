@@ -8,7 +8,7 @@
 		</div>
 
 		<div class="row">
-			<div [routerLink]="['job', item.id]" *ngFor="let item of sponsoredJobs"
+			<div (click)="routeJobInfo(item)" [routerLink]="['job', item.id]" *ngFor="let item of sponsoredJobs"
 				class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
 				<div class="icon-box iconbox-blue mb-4">
 
@@ -17,8 +17,8 @@
 						<div class="text-left icon-group col">
 							<p><i style="font-size: 1.4rem;" class="icofont-location-pin"></i> {{item.location}}</p>
 							<p><i style="font-size: 1.4rem;" class="bi bi-house-fill"></i> {{item.school}}</p>
-							<p><i style="font-size: 1.4rem;" class="bi bi-cash"></i> {{item.price}}</p>
-							<p><i style="font-size: 1.4rem;" class="bi bi-clock-fill"></i> {{item.time}}</p>
+							<p><i style="font-size: 1.4rem;" class="bi bi-cash"></i> {{item.salary}}</p>
+							<p><i style="font-size: 1.4rem;" class="bi bi-clock-fill"></i> {{item.hours}}</p>
 						</div>
 						<div class="icon col">
 							<img width="100%" src="assets/img/custom/{{item.img}}" alt="">

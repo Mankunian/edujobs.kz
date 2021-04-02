@@ -1,5 +1,5 @@
 <div class="container">
-	<div class="row mt-4">
+	<div class="row mt-4 justify-content-md-center">
 		<div class="col-sm-12 text-center">
 			<h2>Post a vacancy</h2>
 			<h5>Advertise your vacancy for 30 days on Eteach for just <span style="font-weight: 700;">£499+VAT</span> and get
@@ -7,11 +7,20 @@
 				your inbox. <br>Alternatively, request a call back with our team and start recruiting today.</h5>
 		</div>
 
-		<div class="col-sm-12 mt-4">
+		<div class="col-sm-12 pt-4 mt-4">
 			<p-steps [model]="items"></p-steps>
 
 			<div class="form mt-4 mb-4">
-				<h2 class="text-center">Form</h2>
+				<!-- <h2 class="text-center">Form</h2> -->
+				<div class="row">
+					<h5>Basic</h5>
+					<div class="col-6">
+						<input style="width: 100%;" type="text" pInputText>
+					</div>
+					<div class="col-6">
+						<input style="width: 100%;" type="text" pInputText>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

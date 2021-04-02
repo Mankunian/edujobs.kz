@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class ShareDataService {
-	private messageSource = new BehaviorSubject(0);
-	currentMessage = this.messageSource.asObservable();
 
-	constructor() { }
-
-	changeMessage(message: any) {
-		this.messageSource.next(message)
+	constructor(private http: HttpClient) { }
+	getProductsSmall() {
+		return this.http.get<any>('assets/json/jobs-small.json')
+			.toPromise()
+			.then(res => res.data)
+			.then(data => { return data; });
 	}
 }
