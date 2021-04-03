@@ -28,12 +28,15 @@ export class FeaturedJobsComponent implements OnInit {
 	viewCompany(item) {
 		console.log(item);
 		let companyId = item.id;
-		// this.data.shareCompanyInfo(item)
 		sessionStorage.setItem('companyInfo', JSON.stringify(item))
 		this._router.navigate(['company', companyId])
 	}
 
 	saveCompany(item) { }
 
-	viewJobs(item) { }
+	viewJobs(item) {
+		let filterParams = [item.title];
+		sessionStorage.setItem('filterParams', JSON.stringify(filterParams));
+		this._router.navigate(['/main']);
+	}
 }

@@ -1,8 +1,11 @@
 <div class="mb-3 rounded">
 	<div *ngIf="filterParams" class="my-filter mb-4 text-left">
 		<h5 class="text-left">Your filters</h5>
-		<div class="filter" *ngFor="let item of filterParams">
-			<span>{{item}} <i class="pi pi-times icon" (click)="removeParam(item)"></i></span>
+		<div class="filter row" *ngFor="let item of filterParams">
+			<div class="col-10">
+				<p class="mb-0">{{item}} </p>
+			</div>
+			<div class="col-2 text-right"><i class="pi pi-times icon" (click)="removeParam(item)"></i></div>
 		</div>
 	</div>
 	<h5 class="text-left">Фильтрация</h5>
