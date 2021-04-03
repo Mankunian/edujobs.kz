@@ -254,6 +254,34 @@
 		</div>
 	</section><!-- End Sevices Section -->
 
+	<!-- ======= CARRER ADVICE ======= -->
+	<section id="team" class="team">
+		<div class="container" data-aos="fade-up">
+			<div class="section-title">
+				<h2 translate>career_advice.title</h2>
+			</div>
+
+			<div class="row">
+				<div *ngFor="let item of carrerAdvice" class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up"
+					data-aos-delay="100">
+					<div class="member">
+						<div class="member-img">
+							<img width="100%" [src]="item.img" class="img-fluid" alt="">
+						</div>
+						<div class="main" style="padding: 1rem;">
+							<h4>{{item.title}}</h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia vero totam sapiente dolor nemo
+								aliquam, consequuntur, excepturi quod molestias, voluptatum eum corrupti dignissimos voluptates. Animi
+								facere dolor unde molestiae autem.</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</section><!-- End CARRER ADVICE -->
+
 
 
 
