@@ -11,7 +11,7 @@ export class LandingComponent implements OnInit {
 	displayResponsive: boolean;
 
 	ngOnInit(): void {
-		this.displayResponsive = true;
+		this.displayResponsive = false;
 		sessionStorage.removeItem('filterParams')
 	}
 }

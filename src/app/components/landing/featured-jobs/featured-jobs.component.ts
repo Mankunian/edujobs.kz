@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ShareDataService } from 'src/app/services/share-data.service';
 
 @Component({
 	selector: 'app-featured-jobs',
@@ -7,9 +8,9 @@ import { Router } from '@angular/router';
 	styleUrls: ['./featured-jobs.component.scss']
 })
 export class FeaturedJobsComponent implements OnInit {
-	featuredSchools: { id: number; title: string; img: string; }[];
+	featuredSchools: any[];
 
-	constructor(private _router: Router) { }
+	constructor(private _router: Router, private data: ShareDataService) { }
 
 	ngOnInit(): void {
 		this.getFeaturedJobs();
@@ -17,16 +18,18 @@ export class FeaturedJobsComponent implements OnInit {
 
 	getFeaturedJobs() {
 		this.featuredSchools = [
-			{ id: 1, title: 'Республиканские физико-математические школы', img: 'assets/img/custom/1.jpg' },
-			{ id: 2, title: 'Назарбаев интеллектуальные школы', img: 'assets/img/custom/2.png' },
-			{ id: 3, title: 'Лицеи “Білім-Инновация”', img: 'assets/img/custom/3.jpg' },
-			{ id: 4, title: 'Suleyman Demirel University', img: 'assets/img/custom/4.jpg' }
+			{ id: 1, title: 'Республиканские физико-математические школы', shortName: 'РФМШ', img: 'assets/img/custom/q1.png' },
+			{ id: 2, title: 'Назарбаев интеллектуальные школы', shortName: 'NU', img: 'assets/img/custom/q2.png' },
+			{ id: 3, title: 'Лицеи “Білім-Инновация”', shortName: 'Bilim', img: 'assets/img/custom/q3.png' },
+			{ id: 4, title: 'Suleyman Demirel University', shortName: 'SDU', img: 'assets/img/custom/q4.png' }
 		]
 	}
 
 	viewCompany(item) {
 		console.log(item);
 		let companyId = item.id;
+		// this.data.shareCompanyInfo(item)
+		sessionStorage.setItem('companyInfo', JSON.stringify(item))
 		this._router.navigate(['company', companyId])
 	}
 
