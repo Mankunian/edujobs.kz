@@ -19,7 +19,9 @@
 					<div class="row">
 						<div class="text-left icon-group col">
 							<p><i style="font-size: 1.4rem;" class="icofont-location-pin"></i> {{item.location}}</p>
-							<p><i style="font-size: 1.4rem;" class="bi bi-house-fill"></i> {{item.school}}</p>
+							<p (click)="searchJobsBySchool(item)" class="hover"><i style="font-size: 1.4rem;"
+									class="bi bi-house-fill"></i>
+								{{item.school}}</p>
 							<p><i style="font-size: 1.4rem;" class="bi bi-cash"></i> {{item.salary}}</p>
 							<p><i style="font-size: 1.4rem;" class="bi bi-clock-fill"></i> {{item.hours}}</p>
 						</div>

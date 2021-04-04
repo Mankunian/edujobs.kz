@@ -79,5 +79,12 @@ export class SponsoredJobsComponent implements OnInit {
 		this._router.navigate(['job', jobId]);
 	}
 
+	searchJobsBySchool(item) {
+		let school = item.school;
+		let filterParams = [school];
+		sessionStorage.setItem('filterParams', JSON.stringify(filterParams));
+		this._router.navigate(['/main'])
+	}
+
 
 }
