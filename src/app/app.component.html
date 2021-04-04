@@ -51,8 +51,6 @@
 			<form class="nav-btn-group" *ngIf="hasRoute('/') && !hasRoute('recruit')">
 				<button translate routerLink="/login" pButton pRipple type="button" label="Sign in"
 					class="p-button-raised p-button-danger p-button-sm"></button>
-				<!-- <button pButton pRipple type="button" label="Register CV"
-					class="p-button-raised p-button-warning p-button-sm"></button> -->
 				<button routerLink="/recruit" pButton pRipple type="button" label="Post a vacancy"
 					class="p-button-raised p-button-help p-button-sm"></button>
 			</form>
@@ -69,7 +67,7 @@
 <router-outlet (activate)="onActivate($event)"></router-outlet>
 
 
-<footer *ngIf="!hasRoute('/company')" id="footer">
+<footer *ngIf="!hasRoute('/company') && !hasRoute('/login')" id="footer">
 	<div class="footer-top">
 		<div class="container">
 			<div class="row">

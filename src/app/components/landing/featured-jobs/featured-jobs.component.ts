@@ -21,7 +21,8 @@ export class FeaturedJobsComponent implements OnInit {
 			{ id: 1, title: 'Республиканские физико-математические школы', shortName: 'РФМШ', img: 'assets/img/custom/q1.png' },
 			{ id: 2, title: 'Назарбаев интеллектуальные школы', shortName: 'NU', img: 'assets/img/custom/q2.png' },
 			{ id: 3, title: 'Лицеи “Білім-Инновация”', shortName: 'Bilim', img: 'assets/img/custom/q3.png' },
-			{ id: 4, title: 'Suleyman Demirel University', shortName: 'SDU', img: 'assets/img/custom/q4.png' }
+			{ id: 4, title: 'Suleyman Demirel University', shortName: 'SDU', img: 'assets/img/custom/q4.png' },
+			{ id: 5, title: ' Haileybury Almaty', shortName: 'Haileybury ', img: 'assets/img/custom/q5.png' }
 		]
 	}
 
