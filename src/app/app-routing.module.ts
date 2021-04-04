@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router'; // CLI imports router
+import { JobseekersComponent } from './components/jobseekers/jobseekers.component';
 import { ComingSoonComponent } from './components/landing/coming-soon/coming-soon.component';
 import { CompanyInfoComponent } from './components/landing/featured-jobs/company-info/company-info.component';
 import { LandingComponent } from './components/landing/landing.component';
@@ -19,6 +20,7 @@ const routes: Routes = [
 	{ path: 'recruit/pay-per-vacancy', component: PayPerVacancyComponent },
 	{ path: 'job/:id', component: JobComponent, },
 	{ path: 'company/:id', component: CompanyInfoComponent, },
+	{ path: 'jobseekers', component: JobseekersComponent, },
 	{ path: '**', component: LandingComponent }
 ];
 // configures NgModule imports and exports

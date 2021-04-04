@@ -56,6 +56,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 import { ComingSoonComponent } from './components/landing/coming-soon/coming-soon.component';
+import { JobseekersComponent } from './components/jobseekers/jobseekers.component';
 
 @NgModule({
 	declarations: [
@@ -78,7 +79,8 @@ import { ComingSoonComponent } from './components/landing/coming-soon/coming-soo
 		PayPerVacancyComponent,
 		JobComponent,
 		CompanyInfoComponent,
-		ComingSoonComponent
+		ComingSoonComponent,
+		JobseekersComponent
 	],
 	imports: [
 		BrowserModule,
