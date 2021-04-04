@@ -25,6 +25,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { StepsModule } from 'primeng/steps';
 import { DialogModule } from 'primeng/dialog';
+import { TabViewModule } from 'primeng/tabview';
 
 // Services
 import { JobService } from './components/landing/banner/recommended-jobs/jobs.service';
@@ -54,6 +55,7 @@ import { CompanyInfoComponent } from "./components/landing/featured-jobs/company
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
+import { ComingSoonComponent } from './components/landing/coming-soon/coming-soon.component';
 
 @NgModule({
 	declarations: [
@@ -75,7 +77,8 @@ import { HttpClient } from '@angular/common/http';
 		VacancyListComponent,
 		PayPerVacancyComponent,
 		JobComponent,
-		CompanyInfoComponent
+		CompanyInfoComponent,
+		ComingSoonComponent
 	],
 	imports: [
 		BrowserModule,
@@ -101,6 +104,7 @@ import { HttpClient } from '@angular/common/http';
 		DropdownModule,
 		MultiSelectModule,
 		DialogModule,
+		TabViewModule,
 		TranslateModule.forRoot({
 			loader: {
 				provide: TranslateLoader,

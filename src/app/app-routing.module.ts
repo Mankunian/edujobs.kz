@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router'; // CLI imports router
+import { ComingSoonComponent } from './components/landing/coming-soon/coming-soon.component';
 import { CompanyInfoComponent } from './components/landing/featured-jobs/company-info/company-info.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { JobComponent } from './components/landing/sponsored-jobs/job/job.component';
@@ -9,6 +10,7 @@ import { PayPerVacancyComponent } from './components/recruit/pay-per-vacancy/pay
 import { RecruitComponent } from './components/recruit/recruit.component';
 
 const routes: Routes = [
+	// { path: '', component: LandingComponent, pathMatch: 'full' },
 	{ path: '', component: LandingComponent, pathMatch: 'full' },
 	{ path: 'landing', component: LandingComponent },
 	{ path: 'main', component: MainComponent },
