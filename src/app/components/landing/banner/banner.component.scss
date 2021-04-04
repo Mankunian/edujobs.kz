@@ -1,3 +1,6 @@
+.background-banner{
+	background-color: rgba(0, 120, 201, 0.5);
+}
 .background{
 	background-color: rgba(0, 120, 201, 0.5);
 	display: none;
@@ -18,4 +21,8 @@ p-tag:hover{
 
 .form-control{
 	width: 100%;
+}
+
+.stat span{
+	color: #0d6efd;
 }

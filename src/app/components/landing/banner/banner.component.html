@@ -7,7 +7,12 @@
 				<h2 translate>banner.sub_title</h2>
 			</div>
 		</div>
-		<div class="row mt-2 justify-content-center">
+
+		<div class="row background-banner p-3 mt-2">
+			<div class="col-xl-12 text-center">
+				<h5 class="stat">Search <span>2807</span> live jobs | <span>1607</span> school recruiting today</h5>
+			</div>
+
 			<div class="col-xl-5 col-lg-4 mt-2  text-center">
 				<input [(ngModel)]="job_title" type="text" name="title" class="form-control" id="title"
 					placeholder="Job title, keywords or school name" data-rule="minlen:4"
@@ -22,12 +27,47 @@
 			<div class="col-xl-2  col-lg-4 mt-2 text-center">
 				<p-button (click)="searchJobs()" icon="pi pi-send" label="Search jobs" styleClass="p-button-md"></p-button>
 			</div>
-		</div>
-		<div class="most-popular pt-2">
-			<div class="text-center">
-				<p-tag (click)="goMainByTag(item)" *ngFor="let item of mostPopular" [value]=item></p-tag>
+
+			<div class="col-xl-12">
+				<div class="most-popular pt-2">
+					<div class="text-center">
+						<p-tag (click)="goMainByTag(item)" *ngFor="let item of mostPopular" [value]=item></p-tag>
+					</div>
+				</div>
 			</div>
 		</div>
+
+
+
+
+
+		<!-- <div class="background-banner ">
+			<div class=" row mt-2 justify-content-center">
+				<div class="col-xl-5 col-lg-4 mt-2  text-center">
+					<input [(ngModel)]="job_title" type="text" name="title" class="form-control" id="title"
+						placeholder="Job title, keywords or school name" data-rule="minlen:4"
+						data-msg="Please enter at least 4 chars" />
+					<div class="validate"></div>
+				</div>
+				<div class="col-xl-5  col-lg-4 mt-2 text-center">
+					<input [(ngModel)]="region" type="text" name="region" class="form-control" id="region"
+						placeholder="Town, city or postcode" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+					<div class="validate"></div>
+				</div>
+				<div class="col-xl-2  col-lg-4 mt-2 text-center">
+					<p-button (click)="searchJobs()" icon="pi pi-send" label="Search jobs" styleClass="p-button-md"></p-button>
+				</div>
+			</div>
+			<div class="most-popular pt-2">
+				<div class="text-center">
+					<p-tag (click)="goMainByTag(item)" *ngFor="let item of mostPopular" [value]=item></p-tag>
+				</div>
+			</div>
+		</div> -->
+
+
+
+
 		<div class="mt-4 background">
 			<div class="os">
 				<app-recommended-jobs></app-recommended-jobs>
