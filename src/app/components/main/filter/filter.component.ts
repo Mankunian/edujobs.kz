@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { RestService } from 'src/app/services/rest.service';
 
 interface CareerGroup {
 	name: string,
@@ -40,7 +41,7 @@ export class FilterComponent implements OnInit {
 	selectedRole: any[];
 	selectedInstitution: any[];
 
-	constructor() {
+	constructor(private rest: RestService) {
 	}
 
 	ngOnInit(): void {
@@ -54,18 +55,16 @@ export class FilterComponent implements OnInit {
 	}
 
 	getCountryList() {
-		this.countries = [
-			{ name: 'Australia', code: 'AU' },
-			{ name: 'Brazil', code: 'BR' },
-			{ name: 'China', code: 'CN' },
-			{ name: 'Egypt', code: 'EG' },
-			{ name: 'France', code: 'FR' },
-			{ name: 'Germany', code: 'DE' },
-			{ name: 'India', code: 'IN' },
-			{ name: 'Japan', code: 'JP' },
-			{ name: 'Spain', code: 'ES' },
-			{ name: 'United States', code: 'US' }
-		];
+		this.countries = [];
+		this.rest.getAllCountries().subscribe((data: any) => {
+			let length = data.length;
+			console.log(length)
+			data.forEach(element => {
+				let country = { name: element.name, subregion: element.subregion, flag: element.flag, code: element.cioc };
+				this.countries.push(country)
+			});
+
+		})
 	}
 
 	getCareerGroups() {

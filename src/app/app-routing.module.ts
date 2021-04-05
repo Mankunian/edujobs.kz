@@ -18,6 +18,7 @@ const routes: Routes = [
 	{ path: 'login', component: LoginRegisterComponent },
 	{ path: 'recruit', component: RecruitComponent },
 	{ path: 'recruit/pay-per-vacancy', component: PayPerVacancyComponent },
+	{ path: 'pay-per-vacancy', component: PayPerVacancyComponent },
 	{ path: 'job/:id', component: JobComponent, },
 	{ path: 'company/:id', component: CompanyInfoComponent, },
 	{ path: 'jobseekers', component: JobseekersComponent, },

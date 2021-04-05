@@ -22,7 +22,6 @@ export class VacancyListComponent implements OnInit {
 		this.jobList.forEach(jobs => {
 			let status = jobs.status;
 			status.forEach(stat => {
-				console.log(stat)
 				if (stat.id === 1) {
 					stat.severity = "warning";
 				} else if (stat.id === 2) {
