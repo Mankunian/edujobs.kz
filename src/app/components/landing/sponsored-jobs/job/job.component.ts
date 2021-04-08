@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ShareDataService } from 'src/app/services/share-data.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class JobComponent implements OnInit {
 	jobInfo: any;
 
 
-	constructor(private share: ShareDataService) {
+	constructor(private share: ShareDataService, private _router: Router) {
 		this.responsiveOptions = [
 			{
 				breakpoint: '1024px',
@@ -59,4 +60,20 @@ export class JobComponent implements OnInit {
 			this.products = products;
 		});
 	}
+
+	searchJobsBySchool(item) {
+		console.log(item);
+		let school = item.school;
+		let filterParams = [school];
+		sessionStorage.setItem('filterParams', JSON.stringify(filterParams));
+		this._router.navigate(['/main'])
+	}
+
+	viewSchoolCareerSite(item) {
+		console.log(item);
+		let schoolId = item.id;
+		sessionStorage.setItem('companyInfo', JSON.stringify(item))
+		this._router.navigate(['company', schoolId])
+	}
+
 }

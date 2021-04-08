@@ -4,14 +4,15 @@
 		"career_advice": "Career advice",
 		"recruitment_agency": "Recruitment agency",
 		"contact_us": "Contact us",
-		"sign_in": "Sign in"
+		"sign_in": "Sign in",
+		"post_vacancy": "Post a vacancy"
 	},
 	"banner": {
 		"title": "Where do you want to teach today?",
 		"sub_title": "Search and apply for teaching jobs across the globe",
 		"search_jobs": "Search jobs",
-		"job_title": "",
-		"region": ""
+		"job_title": "Job title, keywords or school name",
+		"region": "Town, city or postcode"
 	},
 	"post": {
 		"text1": "Are you looking for teachers?",
@@ -21,6 +22,11 @@
 	"sponsored_jobs": {
 		"title": "SPONSORED JOBS",
 		"subtitle": "Your next role could be a click away. Apply today."
+	},
+	"slider": {
+		"astana": "Find your place in the capital",
+		"almaty": "Explore mountains and new vacancies in Almaty",
+		"shymkent": "The most delicious positions in Shymkent"
 	},
 	"featured_schools": {
 		"title": "FEATURED SCHOOLS",

@@ -89,12 +89,12 @@
 			<div class="p-3 mb-3 bg-light rounded">
 				<img src="https://www.eteach.com/DataFiles/Emp_Logos/25144.png?01/04/2021%2013:55:14" alt="">
 				<p>{{jobInfo.school}}</p>
-				<button pButton pRipple type="button" label="View all jobs from this school"
-					class="p-button-raised p-button-text mb-2"></button>
+				<button (click)="searchJobsBySchool(jobInfo)" pButton pRipple type="button"
+					label="View all jobs from this school" class="p-button-raised p-button-text mb-2"></button>
 				<button pButton pRipple type="button" label="Join this schools's talent pool"
 					class="p-button-raised p-button-text mb-2"></button>
-				<button icon="pi pi-external-link" iconPos="right" pButton pRipple type="button"
-					label="View school's career site" class="p-button-raised p-button-text mb-2	"></button>
+				<button (click)="viewSchoolCareerSite(jobInfo)" icon="pi pi-external-link" iconPos="right" pButton pRipple
+					type="button" label="View school's career site" class="p-button-raised p-button-text mb-2	"></button>
 			</div>
 
 			<div class="apply-btn ">
