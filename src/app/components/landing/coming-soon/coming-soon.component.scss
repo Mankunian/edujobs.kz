@@ -1,31 +1,26 @@
-// .h-100 {
-// 	height: 100vh!important;
-// }
+.bg1 {
+	background-color: #007bff !important;
+}
 
-// .m0-auto{
-// 	margin: 0 auto !important;
-// }
+.bg1:hover{
+	background-color: #868e96 !important;
+}
 
-// .bg-dark{
-// 	background-image: url('../../../../assets/img/custom/coming_soon/6.jpg');
-// 	background-repeat: no-repeat;
-// 	background-size: 100% 100%;
-// }
+.m1-txt1{
+	font-family: 'Rubik';
+}
 
-// .mt-5{
-// 	margin-top: 6.5rem !important;
-// }
+.m1-txt2{
+	font-weight: 700;
+	font-family: 'Rubik';
+}
 
-// .bd-placeholder-img {
-// 	font-size: 1.125rem;
-// 	text-anchor: middle;
-// 	-webkit-user-select: none;
-// 	-moz-user-select: none;
-// 	user-select: none;
-// }
+.s2-txt2{
+	font-family: 'Rubik';
+}
 
-// @media (min-width: 768px) {
-// 	.bd-placeholder-img-lg {
-// 		font-size: 3.5rem;
-// 	}
-// }
+.s2-txt3{
+	font-family: 'Rubik';
+	font-size: 15px;
+    text-align: center;
+}
