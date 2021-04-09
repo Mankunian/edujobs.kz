@@ -1,5 +1,5 @@
 <!-- ======= Header ======= -->
-<nav *ngIf="!hasRoute('/company') && !hasRoute('/')" class="navbar navbar-expand-xl navbar-dark bg-dark"
+<nav *ngIf="!hasRoute('/company') && !hasRoute('/coming-soon')" class="navbar navbar-expand-xl navbar-dark bg-dark"
 	aria-label="Third navbar example">
 	<div class="container-fluid">
 		<a class="navbar-brand" href="#">EDjobs.com</a>
@@ -67,7 +67,7 @@
 <router-outlet (activate)="onActivate($event)"></router-outlet>
 
 
-<footer *ngIf="!hasRoute('/company') && !hasRoute('/login') && !hasRoute('/')" id="footer">
+<footer *ngIf="!hasRoute('/company') && !hasRoute('/login') && !hasRoute('/coming-soon')" id="footer">
 	<div class="footer-top">
 		<div class="container">
 			<div class="row">
