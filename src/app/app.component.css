@@ -19,11 +19,15 @@
 
 .dropdown a{
 	font-size: small;
-	margin: 5px 0;
+	/* margin: 5px 0; */
 }
 
 .icon-box:hover{
 	border-bottom: 3px solid #007bff;
+}
+
+.navbar-nav{
+	margin-top: 0.5rem;
 }
 
 

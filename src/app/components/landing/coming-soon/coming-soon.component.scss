@@ -36,3 +36,65 @@
 .valid-input {
   border-bottom: 3px solid transparent;
 }
+
+
+
+.not_req{
+	font-style: italic;
+	font-size: smaller;
+	color: grey;
+}
+
+.size6 {
+	width: 120px;
+	height: 120px;
+}
+
+.wsize2 {
+	max-width: 380px;
+	margin-top: 35px;
+}
+
+.p-sidebar-left.p-sidebar-active{
+	overflow-y: scroll;
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+	.size3 {
+		max-width: 50%;
+		min-height: 100vh;
+	}
+
+		.size2 {
+		height: 100%;
+		width: 55%;
+	}
+ }
+
+// Large devices (desktops, 1024px and up)
+@media (min-width: 1024px) { 
+	.size3 {
+		max-width: 50%;
+		min-height: 100vh;
+	}
+
+		.size2 {
+		height: 100%;
+		width: 52%;
+	}
+ }
+
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+	.size3 {
+		max-width: 45%;
+		min-height: 100vh;
+	}
+
+		.size2 {
+		height: 100%;
+		width: 55%;
+	}
+ }

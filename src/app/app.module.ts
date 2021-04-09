@@ -27,6 +27,7 @@ import { StepsModule } from 'primeng/steps';
 import { DialogModule } from 'primeng/dialog';
 import { TabViewModule } from 'primeng/tabview';
 import { ToastModule } from 'primeng/toast';
+import { SidebarModule } from 'primeng/sidebar';
 
 
 // Services
@@ -111,6 +112,7 @@ import { JobseekersComponent } from './components/jobseekers/jobseekers.componen
 		MultiSelectModule,
 		DialogModule,
 		TabViewModule,
+		SidebarModule,
 		ToastModule,
 		TranslateModule.forRoot({
 			loader: {
