@@ -30,7 +30,7 @@ export class ComingSoonComponent implements OnInit {
 
 	ngOnInit() {
 		setInterval(() => {
-			var countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
+			var countDownDate = new Date("May 5, 2021 00:05:00").getTime();
 			this.countDown(countDownDate);
 		}, 1000);
 
