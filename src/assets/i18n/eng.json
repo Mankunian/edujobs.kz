@@ -41,5 +41,25 @@
 	},
 	"location": {
 		"title": "LOCATION GUIDE"
+	},
+	"footer": {
+		"street": "Mangilik el 55/18",
+		"region": "Nur-Sultan, Z05T3D6",
+		"country": "Kazakhstan",
+		"phone": "Phone",
+		"email": "Email",
+		"jobseekers": "Jobseekers",
+		"browse_jobs": "Browse jobs",
+		"career_advice": "Career advice",
+		"recruitment_agency": "Recruitment agency",
+		"blog": "Blog",
+		"schools": "Schools",
+		"our_services": "Our services",
+		"packages": "Packages",
+		"case_studies": "Case studies",
+		"about_us": "About us",
+		"contact_us": "Contact us",
+		"careers": "Careers",
+		"our_partners": "Our partners"
 	}
 }

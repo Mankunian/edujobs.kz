@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-
+import { SliderSectionComponent } from "../app/components/landing/slider-section/slider-section.component";
 
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.css']
+	styleUrls: ['./app.component.css'],
+	providers: [SliderSectionComponent]
 })
 export class AppComponent implements OnInit {
 	langs: any[];
 	selectedLang: any;
 	showPanel: boolean;
 
-	constructor(private router: Router, private translate: TranslateService) {
+	constructor(private router: Router, private translate: TranslateService, public slider: SliderSectionComponent) {
 		translate.setDefaultLang('rus');
 		this.langs = [
 			{ name: 'Русский', code: 'rus' },
@@ -24,12 +25,13 @@ export class AppComponent implements OnInit {
 
 	ngOnInit() {
 		this.selectedLang = { name: 'Русский', code: 'rus' };
+		this.slider.getLang(this.selectedLang);
 		this.onChangeLang(this.selectedLang)
 	}
 
 	onChangeLang(item) {
-		console.log(item)
 		this.selectedLang = item;
+		this.slider.getLang(this.selectedLang);
 		this.translate.setDefaultLang(item.code);
 	}
 

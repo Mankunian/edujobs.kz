@@ -40,5 +40,25 @@
 	},
 	"location": {
 		"title": "РАСПОЛОЖЕНИЕ"
+	},
+	"footer": {
+		"street": "Мангилик Ел 55/18",
+		"region": "Нур-Султан, Z05T3D6",
+		"country": "Казахстан",
+		"phone": "Тел",
+		"email": "Email",
+		"jobseekers": "СОИСКАТЕЛЯМ",
+		"browse_jobs": "Поиск работы",
+		"career_advice": "Советы по карьере",
+		"recruitment_agency": "Рекрутинг",
+		"blog": "Блог",
+		"schools": "Работодателям",
+		"our_services": "Наши сервисы",
+		"packages": "Пакет услуг",
+		"case_studies": "Отзывы",
+		"about_us": "О Нас",
+		"contact_us": "Контакты",
+		"careers": "Вакансии",
+		"our_partners": "Наши партнеры"
 	}
 }

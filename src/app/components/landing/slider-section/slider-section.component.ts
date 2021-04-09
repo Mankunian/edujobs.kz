@@ -10,6 +10,7 @@ import { PhotoService } from 'src/app/services/photo.service';
 })
 export class SliderSectionComponent implements OnInit {
 	images: any[];
+	selectedLang: any;
 	constructor(config: NgbCarouselConfig, private photoService: PhotoService, private router: Router) {
 		config.interval = 5000;
 		config.wrap = false;
@@ -19,7 +20,14 @@ export class SliderSectionComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
-		this.photoService.getImages().then(images => this.images = images);
+		this.photoService.getImages().then((images: any) => {
+			this.images = images;
+		});
+	}
+
+	getLang(lang) {
+		console.log(lang)
+		this.selectedLang = lang;
 	}
 
 	searchJob(item) {

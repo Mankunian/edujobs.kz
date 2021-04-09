@@ -11,11 +11,12 @@
 				</div>
 			</ng-template>
 			<ng-template pTemplate="caption" let-item>
-				<h4 style="margin-bottom: .5rem; color: #ffffff;">{{item.title}}</h4>
+				<h4 style="margin-bottom: .5rem; color: #ffffff;">{{item.title_rus}}</h4>
 				<button (click)="searchJob(item)" pButton pRipple type="button" position="right" icon="pi pi-external-link"
 					label="Подробнее" class="p-button-raised"></button>
-				<p>{{item.alt | translate}}</p>
+				<p>{{item.alt}}</p>
 			</ng-template>
+
 		</p-galleria>
 	</div>
 </section>
