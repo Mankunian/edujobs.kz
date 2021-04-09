@@ -31,7 +31,9 @@ import { TabViewModule } from 'primeng/tabview';
 import { JobService } from './components/landing/banner/recommended-jobs/jobs.service';
 
 // Components
+// import { AppComponent, FormatTimePipe } from './app.component';
 import { AppComponent } from './app.component';
+
 import { BannerComponent } from './components/landing/banner/banner.component';
 import { SponsoredJobsComponent } from './components/landing/sponsored-jobs/sponsored-jobs.component';
 import { FeaturedJobsComponent } from './components/landing/featured-jobs/featured-jobs.component';
