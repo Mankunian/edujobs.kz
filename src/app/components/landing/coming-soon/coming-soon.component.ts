@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
+import { RestService } from 'src/app/services/rest.service';
 
 
 export class User {
@@ -22,9 +23,10 @@ export class ComingSoonComponent implements OnInit {
 	hours: number;
 	minutes: number;
 	seconds: number;
-	invalidForm: boolean;
 	btnDisabled: boolean;
-	constructor(private messageService: MessageService) { }
+	invalidFormRegion: boolean;
+	invalidFormPosition: boolean;
+	constructor(private messageService: MessageService, private _http: RestService) { }
 
 	ngOnInit() {
 		setInterval(() => {
@@ -34,14 +36,27 @@ export class ComingSoonComponent implements OnInit {
 
 	}
 
-	submitForm(user) {
-		if (!user.position || !user.region) {
-			this.invalidForm = true;
-			this.messageService.add({ severity: 'warn', summary: 'Внимание', detail: 'Заполните пожалуйста поля' });
+	validateForm(user) {
+		if (!user.region && !user.position) {
+			alert('Заполните регион и позицию');
+			return false;
+		} else if (!user.region) {
+			alert('Заполните регион');
+			return false;
+		} else if (!user.position) {
+			alert('Заполните позицию');
+			return false;
 		} else {
-			this.invalidForm = false;
 			this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Message Content' });
+			return this.submitForm(user);
 		}
+	}
+
+	submitForm(user) {
+		alert(true)
+		this._http.subscribeService(user).subscribe(data => {
+			console.log(data)
+		})
 	}
 
 	countDown(countDownDate) {
