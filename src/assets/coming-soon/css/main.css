@@ -483,7 +483,8 @@ input.input100 {
 [ XXL ]*/
 @media (max-width: 1600px) {
   .respon1 {
-    max-width: 38%;
+    /* max-width: 38%; */
+    max-width: 35%;
   }
 }
 

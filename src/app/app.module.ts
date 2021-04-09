@@ -26,6 +26,8 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { StepsModule } from 'primeng/steps';
 import { DialogModule } from 'primeng/dialog';
 import { TabViewModule } from 'primeng/tabview';
+import { ToastModule } from 'primeng/toast';
+
 
 // Services
 import { JobService } from './components/landing/banner/recommended-jobs/jobs.service';
@@ -109,6 +111,7 @@ import { JobseekersComponent } from './components/jobseekers/jobseekers.componen
 		MultiSelectModule,
 		DialogModule,
 		TabViewModule,
+		ToastModule,
 		TranslateModule.forRoot({
 			loader: {
 				provide: TranslateLoader,
