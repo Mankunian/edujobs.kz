@@ -3,16 +3,19 @@
 }
 
 .bg1:hover{
-	background-color: #868e96 !important;
+	background-color: #2d66a0 !important;
+	// border: 5px double rgb(81, 120, 143);
 }
 
 .m1-txt1{
 	font-family: 'Rubik';
+	color: #000 !important;
 }
 
 .m1-txt2{
 	font-weight: 700;
 	font-family: 'Rubik';
+	color: #007bff;
 }
 
 .s2-txt2, .s2-txt1, .s2-txt4{
@@ -22,7 +25,8 @@
 .s2-txt3{
 	font-family: 'Rubik';
 	font-size: 15px;
-    text-align: center;
+  text-align: center;
+	color: #000;
 }
 
 .invalid-input {
