@@ -401,9 +401,10 @@ h1, h2, h3, h4, h5, h6 {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: 100vh;
+  height: 75vh;
   position: relative;
-  background: url("../img/hero-bg.jpg") top center;
+  /* background: url("../img/hero-bg.jpg") top center; */
+  background: url("../../assets/img/custom/banner1.jpg") top center;
   background-size: cover;
   position: relative;
 }
@@ -419,22 +420,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero .container {
-  // padding-top: 80px;
+   /* padding-top: 80px; */
 }
 
 #hero h1 {
-  margin: 0;
-  font-size: 56px;
-  font-weight: 700;
-  line-height: 72px;
-  color: #124265;
-  font-family: "Poppins", sans-serif;
+	margin: 0;
+	font-size: 35px;
+	font-weight: 700;
+	line-height: 56px;
+	color: #124265;
 }
 
 #hero h2 {
-  color: #5e5e5e;
+  color: #343a40;
   margin: 10px 0 0 0;
-  font-size: 22px;
+  font-size: 18px;
 }
 
 #hero .btn-get-started {
@@ -457,7 +457,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero .icon-boxes {
   /* margin-top: 100px; */
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 #hero .icon-box {
@@ -514,7 +514,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-height: 800px) {
   #hero {
-    height: auto;
+    /* height: auto; */
   }
 }
 
@@ -546,7 +546,7 @@ section {
 
 .section-title {
   text-align: center;
-  padding-bottom: 30px;
+  /* padding-bottom: 30px; */
 }
 
 .section-title h2 {
@@ -909,7 +909,7 @@ section {
   text-align: center;
 	width: 100%;
   /* padding: 70px 20px 80px 20px; */
-  padding: 30px 20px;
+  padding: 15px;
   transition: all ease-in-out 0.3s;
   background: #fff;
   box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.05);
@@ -962,7 +962,7 @@ section {
 
 .services .icon-box:hover {
   border-color: #fff;
-  box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 0 50px 0 rgb(0 0 0 / 15%)
 }
 
 .services .iconbox-blue i {
@@ -1044,7 +1044,8 @@ section {
   background: #2487ce;
   background-size: cover;
   /* padding: 60px 0; */
-  padding: 30px 0;
+  /* padding: 30px 0; */
+  padding: 10px 0;
 }
 
 .cta h3 {
@@ -1058,7 +1059,6 @@ section {
 }
 
 .cta .cta-btn {
-  font-family: "Raleway", sans-serif;
   font-weight: 600;
   font-size: 14px;
   letter-spacing: 1px;
@@ -1066,9 +1066,14 @@ section {
   padding: 10px 35px;
   border-radius: 5px;
   transition: 0.5s;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   border: 2px solid #fff;
   color: #fff;
+}
+
+.cta .cta-btn:hover{
+	text-decoration: none;
+	cursor: pointer;
 }
 
 .cta .cta-btn:hover {
@@ -1233,10 +1238,21 @@ section {
 /*--------------------------------------------------------------
 # Team
 --------------------------------------------------------------*/
-.team .member {
+.team .featured_school {
+	padding: 1.5rem;
+  width: 100%;
   margin-bottom: 20px;
   overflow: hidden;
   text-align: center;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0px 2px 15px rgba(18, 66, 101, 0.08);
+}
+.team .member {
+	min-height: max-content;
+  margin-bottom: 20px;
+  overflow: hidden;
+  /* text-align: center; */
   border-radius: 4px;
   background: #fff;
   box-shadow: 0px 2px 15px rgba(18, 66, 101, 0.08);
@@ -1248,7 +1264,7 @@ section {
 }
 
 .team .member .social {
-  position: absolute;
+  /* position: absolute; */
   left: 0;
   bottom: 0;
   right: 0;
@@ -1277,13 +1293,14 @@ section {
 }
 
 .team .member .member-info {
-  padding: 25px 15px;
+  /* padding: 25px 15px; */
+  padding: 25px 0px;
 }
 
 .team .member .member-info h4 {
   font-weight: 700;
   margin-bottom: 5px;
-  font-size: 18px;
+  font-size: 16px;
   color: #124265;
 }
 

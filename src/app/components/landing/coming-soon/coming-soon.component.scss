@@ -1,0 +1,39 @@
+.bg1 {
+	background-color: #007bff !important;
+}
+
+.bg1:hover{
+	background-color: #868e96 !important;
+}
+
+.m1-txt1{
+	font-family: 'Rubik';
+}
+
+.m1-txt2{
+	font-weight: 700;
+	font-family: 'Rubik';
+}
+
+.s2-txt2, .s2-txt1, .s2-txt4{
+	font-family: 'Rubik';
+}
+
+.s2-txt3{
+	font-family: 'Rubik';
+	font-size: 15px;
+    text-align: center;
+}
+
+.invalid{
+	border: 2px solid red !important;
+}
+
+
+.invalid-input {
+  border-bottom: 3px solid red;
+}
+
+.valid-input {
+  border-bottom: 3px solid transparent;
+}

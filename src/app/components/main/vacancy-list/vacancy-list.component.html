@@ -1,0 +1,25 @@
+<h3>23 director jobs</h3>
+<p class="border-bottom">
+	<p-messages class="border-bottom" severity="custom">
+		<ng-template pTemplate>
+			<i style="font-size: 2rem" class="icofont-send-mail"></i>
+			<div class="p-ml-2">Alert me when matching jobs are posted</div>
+		</ng-template>
+	</p-messages>
+</p>
+<article (click)="routeJobInfo(item)" class="blog-post mt-4" *ngFor="let item of jobList">
+	<p class="blog-post-meta"> <b>Job title:</b> {{item.job_title}}
+		<p-badge [severity]="stat?.severity" class="badge" *ngFor="let stat of item.status; let i = index"
+			[value]="stat?.name">
+		</p-badge>
+	</p>
+	<p class="blog-post-meta"> <b>Location:</b> {{item.location}}</p>
+	<p class="blog-post-meta"> <b>Salary:</b> {{item.salary}}</p>
+	<p class="blog-post-meta"> <b>Posted:</b> {{item.posted}}</p>
+	<p class="blog-post-meta"> <b>School:</b> {{item.school}}</p>
+	<p class="blog-post-meta"> <b>Contact Term:</b> {{item.contact_term}}</p>
+	<p class="blog-post-meta"> <b>Description:</b> {{item.description}}</p>
+	<button pButton pRipple type="button" label="Apply now" class="p-button-raised p-button-warning"></button>
+	<button pButton pRipple type="button" label="View full job report"
+		class="p-button-raised p-button-help p-button-text"></button>
+</article>

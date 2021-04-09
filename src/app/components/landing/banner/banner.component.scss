@@ -1,0 +1,28 @@
+.background-banner{
+	background-color: rgba(0, 120, 201, 0.5);
+}
+.background{
+	background-color: rgba(0, 120, 201, 0.5);
+	display: none;
+}
+
+.mb-2{
+	color: #000 !important;
+}
+
+p-tag{
+	margin-left: 0.25rem;
+	margin-right: 0.25rem;
+}
+
+p-tag:hover{
+	cursor: pointer;
+}
+
+.form-control{
+	width: 100%;
+}
+
+.stat span{
+	color: #0d6efd;
+}

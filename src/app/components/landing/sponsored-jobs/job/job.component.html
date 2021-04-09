@@ -1,0 +1,133 @@
+<div class="container">
+	<div class="row mt-4">
+		<div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+			<img width="100%" src="assets/img/custom/44.png" alt="">
+		</div>
+	</div>
+</div>
+
+<main *ngIf="jobInfo" role="main" class="container mb-4">
+	<div class="row">
+		<div class="col-md-8 blog-main">
+			<p-badge [severity]="stat?.severity" class="badge" *ngFor="let stat of jobInfo.status; let i = index"
+				[value]="stat?.name">
+			</p-badge>
+
+			<h3 class="pb-3 mb-4 font-bold border-bottom">
+				{{jobInfo.title}}
+			</h3>
+
+			<div class="blog-post-1 p-2">
+				<div class="row">
+					<div class="col-6">
+						<p>School: <span>{{jobInfo.school}}</span></p>
+						<p>Location: <span>{{jobInfo.location}}</span></p>
+						<p>Contact term: <span>{{jobInfo.contact_term}}</span></p>
+						<p>Salary: <span>{{jobInfo.salary}}</span></p>
+						<p>Hours: <span>{{jobInfo.hours}}</span></p>
+					</div>
+					<div class="col-6">
+						<p>Posted: <span>{{jobInfo.posted}}</span></p>
+						<p>Expires: <span>{{jobInfo.expires}}</span></p>
+						<p>Start date: <span>{{jobInfo.startDate}}</span></p>
+						<p>Job ID: <span>{{jobInfo.id}}</span></p>
+					</div>
+				</div>
+			</div>
+
+			<div class="blog-post-2 font-italic mt-4">
+				<p>Salary: {{jobInfo.salary}}</p>
+				<p>Contact type: {{jobInfo.hours}}</p>
+				<p>Contact term: {{jobInfo.contact_term}}</p>
+				<p>Start Date: {{jobInfo.startDate}}</p>
+				<p>Closing Date: {{jobInfo.expires}}</p>
+				<p>Interview Date: </p>
+			</div>
+
+
+			<div class="blog-post-3">
+				<p>{{jobInfo.title}}</p>
+				<span>We require well-qualified English Teachers who have a passion for teaching English and enabling the
+					progression of our students. We are looking for individuals who are able to fulfil a team role that will
+					complement the energy, dynamism and originality of thought present in our established team. These posts
+					would suit an NQT or a teacher with experience and as your professional development is important to us,
+					there are highly supportive induction programmes and CPD opportunities during your time at the school.
+
+					Our current team offer a range of extra-curricular support sessions to ensure students reach their full
+					potential, and if successful, we would hope that you would share this ethic. Budmouth Academy has a highly
+					successful 6th form and you will have the opportunity to teach post 16; English Literature and English
+					Language.
+
+					Budmouth Academy Weymouth is committed to safeguarding and promoting the welfare of young people and
+					expects all staff to share this commitment. These posts are subject to an enhanced DBS check. We value the
+					diversity of our workforce and welcome applications from all sections of the community.
+
+					If you have not heard from us by 30th April 2021 then please assume that on this occasion your application
+					has been unsuccessful.</span>
+			</div>
+
+
+			<div class="blog-post-4 mt-4 ">
+				<h4>Attachments</h4>
+				<button label="DOC" type="button" pButton pRipple icon="pi pi-file-o" class="p-mr-2 mr-2" pTooltip="CSV"
+					tooltipPosition="bottom"></button>
+				<button label="XLS" type="button" pButton pRipple icon="pi pi-file-excel" class="p-button-success p-mr-2"
+					pTooltip="XLS" tooltipPosition="bottom"></button>
+			</div>
+
+			<div class="blog-post-5 mt-4 mb-4">
+				<h4>Safeguarding Statement:</h4>
+				<p>Budmouth College is committed to safeguarding and promoting the welfare of children, young people and
+					vulnerable adults and expects all staff and volunteers to share this commitment.We particularly welcome
+					applications from under represented groups including ethnicity, gender, transgender, age, disability, sexual
+					orientation or religion.</p>
+				<button pButton pRipple type="button" label="Fast apply" class="p-button-raised p-button-warning"></button>
+			</div>
+		</div>
+
+		<aside class="col-md-4 blog-sidebar text-center">
+			<div class="p-3 mb-3 bg-light rounded">
+				<img src="https://www.eteach.com/DataFiles/Emp_Logos/25144.png?01/04/2021%2013:55:14" alt="">
+				<p>{{jobInfo.school}}</p>
+				<button (click)="searchJobsBySchool(jobInfo)" pButton pRipple type="button"
+					label="View all jobs from this school" class="p-button-raised p-button-text mb-2"></button>
+				<button pButton pRipple type="button" label="Join this schools's talent pool"
+					class="p-button-raised p-button-text mb-2"></button>
+				<button (click)="viewSchoolCareerSite(jobInfo)" icon="pi pi-external-link" iconPos="right" pButton pRipple
+					type="button" label="View school's career site" class="p-button-raised p-button-text mb-2	"></button>
+			</div>
+
+			<div class="apply-btn ">
+				<button pButton pRipple type="button" label="Fast Apply" class="p-button-raised p-button-warning"></button>
+			</div>
+
+			<div class="p-3 mt-3">
+				<p-carousel [autoplayInterval]="3000" [value]="products" orientation="vertical" [style]="{'max-width':'400px'}"
+					verticalViewPortHeight="352px" [numVisible]="1" [numScroll]="1">
+					<ng-template pTemplate="header">
+						<h5>Similar jobs</h5>
+						<hr>
+					</ng-template>
+					<ng-template let-product pTemplate="item">
+						<div class="product-item">
+							<div class="product-item-content">
+								<div class="p-mb-3">
+									<img src="assets/img/custom/6.jpg" [alt]="product.name" class="product-image" />
+								</div>
+								<div>
+									<h4 class="p-mb-1 mt-2">{{product.name}}</h4>
+									<h6 class="p-mt-0 p-mb-3">{{product.price}}</h6>
+									<span>{{product.inventoryStatus}}</span>
+									<div class="car-buttons p-mt-5">
+										<button pButton pRipple type="button" label="View this job"
+											class="p-button-raised p-button-help"></button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</ng-template>
+				</p-carousel>
+			</div>
+		</aside>
+	</div>
+</main>

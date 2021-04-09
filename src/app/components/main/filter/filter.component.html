@@ -1,0 +1,46 @@
+<div class="mb-3 rounded">
+	<div *ngIf="filterParams" class="my-filter mb-4 text-left">
+		<h5 class="text-left">Your filters</h5>
+		<div class="filter row" *ngFor="let item of filterParams">
+			<div class="col-10">
+				<p class="mb-0">{{item}} </p>
+			</div>
+			<div class="col-2 text-right"><i class="pi pi-times icon" (click)="removeParam(item)"></i></div>
+		</div>
+	</div>
+	<h5 class="text-left">Фильтрация</h5>
+	<p-accordion *ngFor="let item of accordionList" class="mt-2">
+		<p-accordionTab header="{{item.name}}">
+			<p-dropdown *ngIf="item.name === 'Location'" ngDefaultControl [options]="countries" [(ngModel)]="selectedCountry"
+				optionLabel="name" [filter]="true" filterBy="name" [showClear]="true" placeholder="Select a location">
+				<ng-template pTemplate="selectedItem">
+					<div class="country-item country-item-value" *ngIf="selectedCountry">
+						<div>{{selectedCountry.name}}</div>
+					</div>
+				</ng-template>
+				<ng-template let-country pTemplate="item">
+					<div class="country-item text-left">
+						<div> <img width="35px" src="{{country.flag}}" alt="flag"> {{country.name}}</div>
+					</div>
+				</ng-template>
+			</p-dropdown>
+
+			<p-multiSelect *ngIf="item.name === 'Career group'" [options]="careerGroups" [(ngModel)]="selectedCareerGroup"
+				defaultLabel="Select a career groups" optionLabel="name" display="chip">
+			</p-multiSelect>
+
+			<p-multiSelect *ngIf="item.name === 'Phase'" [options]="phaseList" [(ngModel)]="selectedPhase"
+				defaultLabel="Select phases" optionLabel="name" display="chip">
+			</p-multiSelect>
+
+			<p-multiSelect *ngIf="item.name === 'Role'" [options]="roleList" [(ngModel)]="selectedRole"
+				defaultLabel="Select roles" optionLabel="name" display="chip">
+			</p-multiSelect>
+
+			<p-multiSelect *ngIf="item.name === 'Institution'" [options]="institutionList" [(ngModel)]="selectedInstitution"
+				defaultLabel="Select roles" optionLabel="name" display="chip">
+			</p-multiSelect>
+
+		</p-accordionTab>
+	</p-accordion>
+</div>
