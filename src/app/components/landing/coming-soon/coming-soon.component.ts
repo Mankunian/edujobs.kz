@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { RestService } from 'src/app/services/rest.service';
 
@@ -15,7 +15,8 @@ export class User {
 	selector: 'app-coming-soon',
 	templateUrl: './coming-soon.component.html',
 	styleUrls: ['./coming-soon.component.scss'],
-	providers: [MessageService]
+	providers: [MessageService],
+	encapsulation: ViewEncapsulation.None
 })
 export class ComingSoonComponent implements OnInit {
 	user: User = new User();
@@ -26,6 +27,7 @@ export class ComingSoonComponent implements OnInit {
 	btnDisabled: boolean;
 	invalidFormRegion: boolean;
 	invalidFormPosition: boolean;
+	display: boolean;
 	constructor(private messageService: MessageService, private _http: RestService) { }
 
 	ngOnInit() {

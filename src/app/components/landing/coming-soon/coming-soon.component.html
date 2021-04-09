@@ -39,90 +39,16 @@
 		</p>
 
 		<div>
-
-
 			<iframe width="100%" height="315" src="https://www.youtube.com/embed/0cRhMomqQfg" title="YouTube video player"
 				frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 				allowfullscreen></iframe>
 
-
-			<!-- <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-				<li class="nav-item" role="presentation">
-					<button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
-						type="button" role="tab" aria-controls="pills-home" aria-selected="true">Работодатель</button>
-				</li>
-				<li class="nav-item" role="presentation">
-					<button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
-						type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Соискатель</button>
-				</li>
-			</ul>
-			<div class="tab-content" id="pills-tabContent">
-				<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-					<p>Кого вы ищите?</p>
-					<form name="myForm" class="contact100-form validate-form">
-						<p class="mb-2">Позиция <span style="color: red">*</span></p>
-						<div class="wrap-input100 m-b-10 validate-input" data-validate="Position is required">
-							<input [(ngModel)]="user.position" class="s2-txt1 placeholder0 input100" type="text" name="position"
-								placeholder="Например: Директор, завуч">
-						</div>
-						<p class="mb-2">Город <span style="color: red">*</span></p>
-						<div class="wrap-input100 m-b-10 validate-input">
-							<input [(ngModel)]="user.region" class="s2-txt1 placeholder0 input100" type="text" name="region"
-								placeholder="Например: Алматы, Тараз">
-						</div>
-						<p class="mb-2">ФИО <span class="not_req">(необязательно)</span></p>
-						<div class="wrap-input100 m-b-10 validate-input" data-validate="Full name is required: ex@abc.xyz">
-							<input [(ngModel)]="user.fullName" class="s2-txt1 placeholder0 input100" type="text" name="fullName"
-								placeholder="Иванов Иван Иванович">
-						</div>
-						<p class="mb-2">E-mail <span class="not_req">(необязательно)</span></p>
-						<div class="wrap-input100 m-b-10 validate-input">
-							<input [(ngModel)]="user.email" class="s2-txt1 placeholder0 input100" type="text" name="email"
-								placeholder="info@gmail.com">
-						</div>
-
-						<div class="w-full">
-							<button (click)="validateForm(user)" class="flex-c-m s2-txt2 size4 bg1 bor1 hov1 trans-04">
-								Подписаться
-							</button>
-						</div>
-					</form>
-				</div>
-				<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-					<p>Какую вакансию вы ищите?</p>
-					<form class="contact100-form validate-form">
-						<div class="wrap-input100 m-b-10 validate-input" data-validate="Position is required">
-							<input [(ngModel)]="user.position" class="s2-txt1 placeholder0 input100" type="text" name="position"
-								placeholder="Позиция">
-						</div>
-
-						<div class="wrap-input100 m-b-20 validate-input" data-validate="Region is required: ex@abc.xyz">
-							<input [(ngModel)]="user.region" class="s2-txt1 placeholder0 input100" type="text" name="region"
-								placeholder="Город">
-						</div>
-						<div class="wrap-input100 m-b-20 validate-input" data-validate="Full name is required: ex@abc.xyz">
-							<input [(ngModel)]="user.fullName" class="s2-txt1 placeholder0 input100" type="text" name="fullName"
-								placeholder="ФИО">
-						</div>
-						<div class="wrap-input100 m-b-20 validate-input" data-validate="Email is required: ex@abc.xyz">
-							<input [(ngModel)]="user.email" class="s2-txt1 placeholder0 input100" type="text" name="email"
-								placeholder="E-mail">
-						</div>
-
-						<div class="w-full">
-							<button (click)="validateForm(user)" class="flex-c-m s2-txt2 size4 bg1 bor1 hov1 trans-04">
-								Подписаться
-							</button>
-						</div>
-					</form>
-				</div>
-			</div> -->
+			<button (click)="display = true" style="width: 100%;" pButton pRipple type="button" label=" Оставить заявку"
+				class="p-button-raised"></button>
 
 
 
-			<p class="s2-txt3 p-t-18">
-				Не переживайте! Вы всегда можете отписаться от нашей рассылки.
-			</p>
+
 		</div>
 
 		<div class="flex-w" style="display: none;">
@@ -141,7 +67,91 @@
 	</div>
 </div>
 
+<p-sidebar [(visible)]="display">
+	<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+		<li class="nav-item" role="presentation">
+			<button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+				type="button" role="tab" aria-controls="pills-home" aria-selected="true">Работодатель</button>
+		</li>
+		<li class="nav-item" role="presentation">
+			<button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
+				type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Соискатель</button>
+		</li>
+	</ul>
+	<div class="tab-content" id="pills-tabContent">
+		<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+			<p>Кого вы ищите?</p>
+			<form name="myForm" class="contact100-form validate-form">
+				<p class="mb-2">Позиция <span style="color: red">*</span></p>
+				<div class="wrap-input100 m-b-10 validate-input" data-validate="Position is required">
+					<input [(ngModel)]="user.position" class="s2-txt1 placeholder0 input100" type="text" name="position"
+						placeholder="Например: Директор, завуч">
+				</div>
+				<p class="mb-2">Город <span style="color: red">*</span></p>
+				<div class="wrap-input100 m-b-10 validate-input">
+					<input [(ngModel)]="user.region" class="s2-txt1 placeholder0 input100" type="text" name="region"
+						placeholder="Например: Алматы, Тараз">
+				</div>
+				<p class="mb-2">ФИО <span class="not_req">(необязательно)</span></p>
+				<div class="wrap-input100 m-b-10 validate-input" data-validate="Full name is required: ex@abc.xyz">
+					<input [(ngModel)]="user.fullName" class="s2-txt1 placeholder0 input100" type="text" name="fullName"
+						placeholder="Иванов Иван Иванович">
+				</div>
+				<p class="mb-2">E-mail <span class="not_req">(необязательно)</span></p>
+				<div class="wrap-input100 m-b-10 validate-input">
+					<input [(ngModel)]="user.email" class="s2-txt1 placeholder0 input100" type="text" name="email"
+						placeholder="info@gmail.com">
+				</div>
+
+				<div class="w-full">
+					<button (click)="validateForm(user)" class="flex-c-m s2-txt2 size4 bg1 bor1 hov1 trans-04">
+						Подписаться
+					</button>
+				</div>
+			</form>
+		</div>
+		<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+			<p>Какую вакансию вы ищите?</p>
+			<form name="myForm" class="contact100-form validate-form">
+				<p class="mb-2">Позиция <span style="color: red">*</span></p>
+				<div class="wrap-input100 m-b-10 validate-input" data-validate="Position is required">
+					<input [(ngModel)]="user.position" class="s2-txt1 placeholder0 input100" type="text" name="position"
+						placeholder="Например: Директор, завуч">
+				</div>
+				<p class="mb-2">Город <span style="color: red">*</span></p>
+				<div class="wrap-input100 m-b-10 validate-input">
+					<input [(ngModel)]="user.region" class="s2-txt1 placeholder0 input100" type="text" name="region"
+						placeholder="Например: Алматы, Тараз">
+				</div>
+				<p class="mb-2">ФИО <span class="not_req">(необязательно)</span></p>
+				<div class="wrap-input100 m-b-10 validate-input" data-validate="Full name is required: ex@abc.xyz">
+					<input [(ngModel)]="user.fullName" class="s2-txt1 placeholder0 input100" type="text" name="fullName"
+						placeholder="Иванов Иван Иванович">
+				</div>
+				<p class="mb-2">E-mail <span class="not_req">(необязательно)</span></p>
+				<div class="wrap-input100 m-b-10 validate-input">
+					<input [(ngModel)]="user.email" class="s2-txt1 placeholder0 input100" type="text" name="email"
+						placeholder="info@gmail.com">
+				</div>
+
+				<div class="w-full">
+					<button (click)="validateForm(user)" class="flex-c-m s2-txt2 size4 bg1 bor1 hov1 trans-04">
+						Подписаться
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+
+	<p class="s2-txt3 p-t-18">
+		Не переживайте! Вы всегда можете отписаться от нашей рассылки.
+	</p>
+</p-sidebar>
+
 <p-toast position="bottom-center"></p-toast>
+
 
 
 <script>
