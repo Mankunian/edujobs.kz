@@ -58,6 +58,7 @@
 
 .p-sidebar-left.p-sidebar-active{
 	background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+	overflow: scroll;
 }
 
 .p-b-45 {
@@ -79,7 +80,7 @@
 		min-height: 100vh;
 	}
 
-		.size2 {
+	.size2 {
 		height: 100%;
 		width: 55%;
 	}
@@ -106,7 +107,7 @@
 		min-height: 100vh;
 	}
 
-		.size2 {
+	.size2 {
 		height: 100%;
 		width: 55%;
 	}
@@ -114,5 +115,10 @@
 	.size6 {
     width: 140px;
     height: 140px;
-}
+	}
+
+	
+	.p-sidebar-left.p-sidebar-active{
+		overflow: hidden;
+	}
  }
