@@ -4,7 +4,6 @@
 
 .bg1:hover{
 	background-color: #2d66a0 !important;
-	// border: 5px double rgb(81, 120, 143);
 }
 
 .m1-txt1{
@@ -55,8 +54,22 @@
 	margin-top: 35px;
 }
 
+
+
 .p-sidebar-left.p-sidebar-active{
-	overflow-y: scroll;
+	background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+}
+
+.p-b-45 {
+	padding-bottom: 90px;
+}
+
+.contact100-form p{
+	color: #000;
+}
+
+.tab-content>.tab-pane p {
+	color: #000;
 }
 
 // Large devices (desktops, 992px and up)
@@ -97,4 +110,9 @@
 		height: 100%;
 		width: 55%;
 	}
+
+	.size6 {
+    width: 140px;
+    height: 140px;
+}
  }
