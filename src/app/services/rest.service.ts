@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 	providedIn: 'root'
 })
 export class RestService {
-	url: string = ''
+	url: string = 'http://edujobs.loc/api/'
 	constructor(private http: HttpClient) { }
 
 	getAllCountries() {
@@ -13,6 +13,11 @@ export class RestService {
 	}
 
 	subscribeService(user) {
-		return this.http.post(this.url, user);
+		console.log(user)
+		return this.http.post(this.url + 'leads', user);
+	}
+
+	getReqListService() {
+		return this.http.get(this.url + 'leads')
 	}
 }

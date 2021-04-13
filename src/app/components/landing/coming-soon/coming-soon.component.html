@@ -31,14 +31,14 @@
 	<!-- Form -->
 	<div class="size3 flex-col-sb flex-w p-l-75 p-r-75 p-t-45 p-b-45 respon1">
 		<div class="wrap-pic1 mb-2">
-			<img src="assets/coming-soon/images/logo1.png" alt="LOGO">
+			<img src="assets/coming-soon/images/logo.png" alt="LOGO">
 		</div>
 		<div>
 			<p class="m1-txt1 p-b-10">
-				Наш веб-сайт<span class="m1-txt2"> в разработке</span> <br>
+				Сайт находится<span class="m1-txt2"> в разработке</span> <br>
 				<span>Расскажите нам о себе</span>
 			</p>
-			<iframe width="100%" height="315" src="https://www.youtube.com/embed/0cRhMomqQfg" title="YouTube video player"
+			<iframe width="100%" height="315" src="https://www.youtube.com/embed/KGz5oinq3L0" title="YouTube video player"
 				frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 				allowfullscreen></iframe>
 
@@ -65,18 +65,20 @@
 <p-sidebar [(visible)]="display">
 	<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
 		<li class="nav-item" role="presentation">
-			<button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
-				type="button" role="tab" aria-controls="pills-home" aria-selected="true">Работодатель</button>
+			<button name="Работодатель" (click)="getGroup($event)" class="nav-link active" id="pills-home-tab"
+				data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+				aria-selected="true">Работодатель</button>
 		</li>
 		<li class="nav-item" role="presentation">
-			<button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
-				type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Соискатель</button>
+			<button name="Соискатель" (click)="getGroup($event)" class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+				data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+				aria-selected="false">Соискатель</button>
 		</li>
 	</ul>
 	<div class="tab-content" id="pills-tabContent">
 		<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 			<p>Кого вы ищите?</p>
-			<form name="myForm" class="contact100-form validate-form">
+			<form name="myForm" #myForm="ngForm" class="contact100-form validate-form">
 				<p class="mb-2">Позиция <span style="color: red">*</span></p>
 				<div class="wrap-input100 m-b-10 validate-input" data-validate="Position is required">
 					<input [(ngModel)]="user.position" class="s2-txt1 placeholder0 input100" type="text" name="position"
@@ -84,12 +86,12 @@
 				</div>
 				<p class="mb-2">Город <span style="color: red">*</span></p>
 				<div class="wrap-input100 m-b-10 validate-input">
-					<input [(ngModel)]="user.region" class="s2-txt1 placeholder0 input100" type="text" name="region"
+					<input [(ngModel)]="user.city" class="s2-txt1 placeholder0 input100" type="text" name="region"
 						placeholder="Например: Алматы, Тараз">
 				</div>
 				<p class="mb-2">ФИО <span class="not_req">(необязательно)</span></p>
 				<div class="wrap-input100 m-b-10 validate-input" data-validate="Full name is required: ex@abc.xyz">
-					<input [(ngModel)]="user.fullName" class="s2-txt1 placeholder0 input100" type="text" name="fullName"
+					<input [(ngModel)]="user.name" class="s2-txt1 placeholder0 input100" type="text" name="fullName"
 						placeholder="Иванов Иван Иванович">
 				</div>
 				<p class="mb-2">E-mail <span class="not_req">(необязательно)</span></p>
@@ -107,7 +109,7 @@
 		</div>
 		<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
 			<p>Какую вакансию вы ищите?</p>
-			<form name="myForm" class="contact100-form validate-form">
+			<form name="myForm" #myForm="ngForm" class="contact100-form validate-form">
 				<p class="mb-2">Позиция <span style="color: red">*</span></p>
 				<div class="wrap-input100 m-b-10 validate-input" data-validate="Position is required">
 					<input [(ngModel)]="user.position" class="s2-txt1 placeholder0 input100" type="text" name="position"
@@ -115,12 +117,12 @@
 				</div>
 				<p class="mb-2">Город <span style="color: red">*</span></p>
 				<div class="wrap-input100 m-b-10 validate-input">
-					<input [(ngModel)]="user.region" class="s2-txt1 placeholder0 input100" type="text" name="region"
+					<input [(ngModel)]="user.city" class="s2-txt1 placeholder0 input100" type="text" name="region"
 						placeholder="Например: Алматы, Тараз">
 				</div>
 				<p class="mb-2">ФИО <span class="not_req">(необязательно)</span></p>
 				<div class="wrap-input100 m-b-10 validate-input" data-validate="Full name is required: ex@abc.xyz">
-					<input [(ngModel)]="user.fullName" class="s2-txt1 placeholder0 input100" type="text" name="fullName"
+					<input [(ngModel)]="user.name" class="s2-txt1 placeholder0 input100" type="text" name="fullName"
 						placeholder="Иванов Иван Иванович">
 				</div>
 				<p class="mb-2">E-mail <span class="not_req">(необязательно)</span></p>
