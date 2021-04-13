@@ -132,7 +132,12 @@
 				</div>
 
 				<div class="w-full">
-					<button (click)="validateForm(user)" class="flex-c-m s2-txt2 size4 bg1 bor1 hov1 trans-04">
+					<!-- <button (click)="validateForm(user)" class="flex-c-m s2-txt2 size4 bg1 bor1 hov1 trans-04">
+						Подписаться 
+					</button> -->
+					<button (click)="validateForm(user)" style="width: 100%;" class="btn btn-primary" type="button"
+						[disabled]="btnDisabled">
+						<span *ngIf="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
 						Подписаться
 					</button>
 				</div>

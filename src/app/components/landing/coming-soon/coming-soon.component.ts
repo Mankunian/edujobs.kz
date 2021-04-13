@@ -33,6 +33,7 @@ export class ComingSoonComponent implements OnInit {
 	display: boolean;
 	group: string = 'Работодатель';
 	tabIndex = 0;
+	loading: boolean;
 	constructor(private messageService: MessageService, private _http: RestService) { }
 
 	ngOnInit() {
@@ -70,9 +71,13 @@ export class ComingSoonComponent implements OnInit {
 	}
 
 	submitForm(user) {
+		this.loading = true;
+		this.btnDisabled = true;
 		user.type = this.group;
 		this._http.subscribeService(user).subscribe(data => {
 			console.log(data);
+			this.btnDisabled = false;
+			this.loading = false;
 			this.display = false;
 			this.myForm.resetForm();
 			this.messageService.add({ severity: 'success', summary: '200', detail: 'Заявка успешно отправлена' });
