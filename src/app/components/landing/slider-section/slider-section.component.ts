@@ -26,7 +26,6 @@ export class SliderSectionComponent implements OnInit {
 	}
 
 	getLang(lang) {
-		console.log(lang)
 		this.selectedLang = lang;
 	}
 

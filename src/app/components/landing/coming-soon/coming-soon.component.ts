@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import { RestService } from 'src/app/services/rest.service';
 
@@ -6,9 +7,10 @@ import { RestService } from 'src/app/services/rest.service';
 export class User {
 	position: string;
 	email: string;
-	fullName: string;
-	region: string;
+	name: string;
+	city: string;
 }
+
 
 
 @Component({
@@ -19,6 +21,7 @@ export class User {
 	encapsulation: ViewEncapsulation.None
 })
 export class ComingSoonComponent implements OnInit {
+	@ViewChild('myForm', { static: false }) myForm: NgForm;
 	user: User = new User();
 	days: number;
 	hours: number;
@@ -28,9 +31,12 @@ export class ComingSoonComponent implements OnInit {
 	invalidFormRegion: boolean;
 	invalidFormPosition: boolean;
 	display: boolean;
+	group: string = 'Работодатель';
+	tabIndex = 0;
 	constructor(private messageService: MessageService, private _http: RestService) { }
 
 	ngOnInit() {
+		this.getRequestsList();
 		setInterval(() => {
 			var countDownDate = new Date("May 5, 2021 00:05:00").getTime();
 			this.countDown(countDownDate);
@@ -38,26 +44,38 @@ export class ComingSoonComponent implements OnInit {
 
 	}
 
+	getGroup(e) {
+		this.group = e.target.name;
+	}
+
 	validateForm(user) {
-		if (!user.region && !user.position) {
+		if (!user.city && !user.position) {
 			alert('Заполните регион и позицию');
 			return false;
-		} else if (!user.region) {
+		} else if (!user.city) {
 			alert('Заполните регион');
 			return false;
 		} else if (!user.position) {
 			alert('Заполните позицию');
 			return false;
 		} else {
-			this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Message Content' });
 			return this.submitForm(user);
 		}
 	}
 
-	submitForm(user) {
-		alert(true)
-		this._http.subscribeService(user).subscribe(data => {
+	getRequestsList() {
+		this._http.getReqListService().subscribe(data => {
 			console.log(data)
+		})
+	}
+
+	submitForm(user) {
+		user.type = this.group;
+		this._http.subscribeService(user).subscribe(data => {
+			console.log(data);
+			this.display = false;
+			this.myForm.resetForm();
+			this.messageService.add({ severity: 'success', summary: '200', detail: 'Заявка успешно отправлена' });
 		})
 	}
 
