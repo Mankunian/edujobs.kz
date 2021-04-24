@@ -31,9 +31,10 @@ export class ComingSoonComponent implements OnInit {
 	invalidFormRegion: boolean;
 	invalidFormPosition: boolean;
 	display: boolean;
-	group: string = 'Работодатель';
+	group: string = 'Recruiter';
 	tabIndex = 0;
 	loading: boolean;
+	roleList: any;
 	constructor(private messageService: MessageService, private _http: RestService) { }
 
 	ngOnInit() {
@@ -60,7 +61,7 @@ export class ComingSoonComponent implements OnInit {
 			alert('Заполните позицию');
 			return false;
 		} else {
-			return this.submitForm(user);
+			return this.submitApplication(user);
 		}
 	}
 
@@ -70,12 +71,11 @@ export class ComingSoonComponent implements OnInit {
 		})
 	}
 
-	submitForm(user) {
+	submitApplication(user) {
 		this.loading = true;
 		this.btnDisabled = true;
 		user.type = this.group;
-		this._http.subscribeService(user).subscribe(data => {
-			console.log(data);
+		this._http.submitAppService(user).subscribe(data => {
 			this.btnDisabled = false;
 			this.loading = false;
 			this.display = false;
