@@ -5,14 +5,14 @@ import { Injectable } from '@angular/core';
 	providedIn: 'root'
 })
 export class RestService {
-	url: string = 'http://edujobs.loc/api/'
+	url: string = 'http://back.edujobs.kz/api/'
 	constructor(private http: HttpClient) { }
 
 	getAllCountries() {
 		return this.http.get('https://restcountries.eu/rest/v2/all')
 	}
 
-	subscribeService(user) {
+	submitAppService(user) {
 		console.log(user)
 		return this.http.post(this.url + 'leads', user);
 	}
