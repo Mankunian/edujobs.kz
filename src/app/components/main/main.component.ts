@@ -1,7 +1,5 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { MessageService } from 'primeng/api';
-import { ShareDataService } from "../../services/share-data.service";
-import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -14,14 +12,9 @@ import { Subscription } from 'rxjs';
 export class MainComponent implements OnInit {
 
 
-	constructor() { }
+	constructor() {
+	}
 
 	ngOnInit(): void {
 	}
-
-
-
-
-
-
 }

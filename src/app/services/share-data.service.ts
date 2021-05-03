@@ -21,4 +21,8 @@ export class ShareDataService {
 	shareCompanyInfo(item: any) {
 		this.messageSource.next(item)
 	}
+
+	changeLang(langItem: any) {
+		this.messageSource.next(langItem)
+	}
 }

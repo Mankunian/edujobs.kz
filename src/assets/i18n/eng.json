@@ -61,5 +61,15 @@
 		"contact_us": "Contact us",
 		"careers": "Careers",
 		"our_partners": "Our partners"
+	},
+	"main": {
+		"filter": "Filters",
+		"location": "Location",
+		"region": "City/region",
+		"career_group": "Career group",
+		"phase": "Phase",
+		"role": "Role",
+		"institution": "Institution",
+		"subject": "Subject"
 	}
 }

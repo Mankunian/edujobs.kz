@@ -8,7 +8,7 @@
 			<div class="col-2 text-right"><i class="pi pi-times icon" (click)="removeParam(item)"></i></div>
 		</div>
 	</div>
-	<h5 class="text-left">Фильтрация</h5>
+	<h5 translate class="text-left">main.filter</h5>
 	<p-accordion *ngFor="let item of accordionList" class="mt-2">
 		<p-accordionTab header="{{item.name}}">
 			<p-dropdown *ngIf="item.name === 'Location'" ngDefaultControl [options]="countries" [(ngModel)]="selectedCountry"

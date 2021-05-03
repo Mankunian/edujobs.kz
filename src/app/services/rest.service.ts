@@ -20,4 +20,9 @@ export class RestService {
 	getReqListService() {
 		return this.http.get(this.url + 'leads')
 	}
+
+	registerService(userInfo) {
+		console.log(userInfo)
+		return this.http.post(this.url + 'register', userInfo)
+	}
 }

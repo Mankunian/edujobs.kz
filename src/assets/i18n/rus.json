@@ -60,5 +60,15 @@
 		"contact_us": "Контакты",
 		"careers": "Вакансии",
 		"our_partners": "Наши партнеры"
+	},
+	"main": {
+		"filter": "Фильтры",
+		"location": "Страна",
+		"region": "Город/регион",
+		"career_group": "Должностная группа",
+		"phase": "Уровень",
+		"role": "Роль",
+		"institution": "Организация",
+		"subject": "Предмет"
 	}
 }

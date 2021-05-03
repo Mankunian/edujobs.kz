@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { RestService } from 'src/app/services/rest.service';
+import { ShareDataService } from 'src/app/services/share-data.service';
+import { Subscription } from 'rxjs';
 
 interface CareerGroup {
 	name: string,
@@ -30,21 +32,35 @@ interface Institution {
 export class FilterComponent implements OnInit {
 	accordionList: any;
 	filterParams: any;
+	subscription: Subscription;
+
 	countries: any[];
 	careerGroups: CareerGroup[];
 	phaseList: Phase[];
 	roleList: Role[];
 	institutionList: Institution[];
+
 	selectedCountry: any;
 	selectedCareerGroup: any[];
 	selectedPhase: any[];
 	selectedRole: any[];
 	selectedInstitution: any[];
+	headerName: string;
 
-	constructor(private rest: RestService) {
+	constructor(private rest: RestService, private share: ShareDataService) {
+		this.subscription = this.share.currentMessage.subscribe((lang: any) => {
+			console.log(lang);
+			if (lang.code == 'rus') {
+				this.getRus();
+			} else {
+				this.getEng();
+			}
+		})
 	}
 
 	ngOnInit(): void {
+
+
 		this.getFilterParams();
 		this.getAccordionList();
 		this.getCountryList();
@@ -111,15 +127,13 @@ export class FilterComponent implements OnInit {
 	}
 
 	getAccordionList() {
-		this.accordionList = [
-			{ id: 1, name: 'Location' },
-			{ id: 2, name: 'Career group' },
-			{ id: 3, name: 'Phase' },
-			{ id: 4, name: 'Role' },
-			{ id: 5, name: 'Institution' },
-			{ id: 6, name: 'Subject' },
-			{ id: 7, name: 'Hours' },
-		]
+		let lang = JSON.parse(sessionStorage.lang);
+		if (lang.code == 'eng') {
+			this.getEng();
+		} else if (lang.code == 'rus') {
+			this.getRus();
+		}
+
 	}
 
 	getFilterParams() {
@@ -135,6 +149,28 @@ export class FilterComponent implements OnInit {
 			}
 		});
 		sessionStorage.setItem('filterParams', JSON.stringify(this.filterParams));
+	}
+
+	getEng() {
+		return this.accordionList = [
+			{ id: 1, name: 'Location' },
+			{ id: 2, name: 'Career group' },
+			{ id: 3, name: 'Phase' },
+			{ id: 4, name: 'Role' },
+			{ id: 5, name: 'Institution' },
+			{ id: 6, name: 'Subject' }
+		];
+	}
+
+	getRus() {
+		return this.accordionList = [
+			{ id: 1, name: 'Страна' },
+			{ id: 2, name: 'Должностная группа' },
+			{ id: 3, name: 'Уровень' },
+			{ id: 4, name: 'Роль' },
+			{ id: 5, name: 'Организация' },
+			{ id: 6, name: 'Предмет' }
+		];
 	}
 
 }

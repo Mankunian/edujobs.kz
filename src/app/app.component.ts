@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { SliderSectionComponent } from "../app/components/landing/slider-section/slider-section.component";
+import { ShareDataService } from './services/share-data.service';
 
 @Component({
 	selector: 'app-root',
@@ -14,7 +15,12 @@ export class AppComponent implements OnInit {
 	selectedLang: any;
 	showPanel: boolean;
 
-	constructor(private router: Router, private translate: TranslateService, public slider: SliderSectionComponent) {
+	constructor(
+		private router: Router,
+		private translate: TranslateService,
+		public slider: SliderSectionComponent,
+		private share: ShareDataService
+	) {
 		translate.setDefaultLang('rus');
 		this.langs = [
 			{ name: 'Русский', code: 'rus' },
@@ -33,6 +39,8 @@ export class AppComponent implements OnInit {
 		this.selectedLang = item;
 		this.slider.getLang(this.selectedLang);
 		this.translate.setDefaultLang(item.code);
+		sessionStorage.setItem('lang', JSON.stringify(item));
+		this.share.changeLang(item)
 	}
 
 	onActivate(event) {
