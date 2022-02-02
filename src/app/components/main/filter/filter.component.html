@@ -12,7 +12,7 @@
 	<p-accordion *ngFor="let item of accordionList" class="mt-2">
 		<p-accordionTab header="{{item.name}}">
 			<p-dropdown *ngIf="item.name === 'Location'" ngDefaultControl [options]="countries" [(ngModel)]="selectedCountry"
-				optionLabel="name" [filter]="true" filterBy="name" [showClear]="true" placeholder="Select a location">
+				optionLabel="name" [filter]="true" filterBy="name" [showClear]="true" [placeholder]="locationPlaceholder">
 				<ng-template pTemplate="selectedItem">
 					<div class="country-item country-item-value" *ngIf="selectedCountry">
 						<div>{{selectedCountry.name}}</div>

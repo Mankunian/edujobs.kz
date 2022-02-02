@@ -46,6 +46,7 @@ export class FilterComponent implements OnInit {
 	selectedRole: any[];
 	selectedInstitution: any[];
 	headerName: string;
+	locationPlaceholder: string;
 
 	constructor(private rest: RestService, private share: ShareDataService) {
 		this.subscription = this.share.currentMessage.subscribe((lang: any) => {
@@ -59,8 +60,6 @@ export class FilterComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
-
-
 		this.getFilterParams();
 		this.getAccordionList();
 		this.getCountryList();
@@ -152,6 +151,7 @@ export class FilterComponent implements OnInit {
 	}
 
 	getEng() {
+
 		return this.accordionList = [
 			{ id: 1, name: 'Location' },
 			{ id: 2, name: 'Career group' },
@@ -163,6 +163,7 @@ export class FilterComponent implements OnInit {
 	}
 
 	getRus() {
+
 		return this.accordionList = [
 			{ id: 1, name: 'Страна' },
 			{ id: 2, name: 'Должностная группа' },
@@ -172,5 +173,6 @@ export class FilterComponent implements OnInit {
 			{ id: 6, name: 'Предмет' }
 		];
 	}
+
 
 }
